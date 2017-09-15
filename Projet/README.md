@@ -7,7 +7,7 @@ La création d'un **Projet Android** nécessitent les technologies suivantes :
 # Création d'un Projet Android
 
 Pour la création d'un projet Android, sous Windows :
-* Créez un fichier script batch `cmp_create_project.bat` 
+* Créez un fichier script batch `cmd_create_project.bat` 
 * Insérez les instructions ci-dessous
 * Exécutez le script en ligne de commande
 ```
