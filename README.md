@@ -15,6 +15,9 @@ Avec à la fois des compétences en Systèmes Embarqués et en Robotique.
 C'est une bibliothèque développée en C/C++/Java et maintenu par 
 [Gerard KESSE](http://5.48.215.193:8855/presentation/ "Accédez à mon site web (ReadyDev)").
 
+Les concepts abordés sur l'Installation :  
+* [Création d'un Projet](https://github.com/gkesse/ReadyAndroid/tree/master/Projet "Projet")  
+
 Les concepts abordés sur les Bases :  
 * [Message](https://github.com/gkesse/ReadyAndroid/tree/master/Message "Message")  
 
