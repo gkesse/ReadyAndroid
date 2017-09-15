@@ -19,7 +19,6 @@ set PATH=C:\NVPACK\android-sdk-windows;%PATH%
 set PATH=C:\NVPACK\android-sdk-windows\platforms;%PATH%
 set PATH=C:\NVPACK\android-sdk-windows\platform-tools;%PATH%
 set PATH=C:\NVPACK\android-sdk-windows\tools;%PATH%
-set PATH=C:\Ant\apache-ant-1.9.6\bin;%PATH%
 
 set GTARGET=android-19
 set GNAME=GApp
