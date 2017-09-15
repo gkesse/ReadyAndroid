@@ -16,7 +16,7 @@ C'est une bibliothèque développée en C/C++/Java et maintenu par
 [Gerard KESSE](http://5.48.215.193:8855/presentation/ "Accédez à mon site web (ReadyDev)").
 
 Les concepts abordés sur les Bases :  
-* [Installation](https://github.com/gkesse/ReadyAndroid/tree/master/Installation "Installation")  
+* [Message](https://github.com/gkesse/ReadyAndroid/tree/master/Message "Message")  
 
 # Technologies
 
