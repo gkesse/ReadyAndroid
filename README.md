@@ -11,22 +11,22 @@ Avec à la fois des compétences en Systèmes Embarqués et en Robotique.
 
 # ReadyAndroid
 
-**ReadyQt** est une bibliothèque de fonctions C/C++ pour le développement d'applications Android NDK.  
-C'est une bibliothèque développée en C/C++ et maintenu par 
+**ReadyAndroid** est une bibliothèque de fonctions C/C++/Java pour le développement d'applications Android.  
+C'est une bibliothèque développée en C/C++/Java et maintenu par 
 [Gerard KESSE](http://5.48.215.193:8855/presentation/ "Accédez à mon site web (ReadyDev)").
 
-Les concepts abordés :  
+Les concepts abordés sur les Bases :  
 * [Installation](https://github.com/gkesse/ReadyAndroid/tree/master/Installation "Installation")  
 
 # Technologies
 
 Le développement de la bibliothèque **ReadyAndroid** a nécessité les technologies suivantes :
 
-* Langage : **C/C++**
-* IDE : **Eclipse**
-* Environnement UNIX sous Windows : **Cygwin**
-* Kit de Développement Java : **Java JDK**
-* Outil de Développement Android : **Android ADT**
-* Kit de Développement Application Android : **Android SDK**
+* Langage : **C/C++, Java**
+* Editeur de Texte : **Notepad++**
+* Technique de Compilation : **Ligne de Commande**
+* Portage de UNIX sous Windows : **Cygwin**
+* Kit de Développement Java : **JDK**
+* Kit de Développement Android : **Android SDK**
 * Kit de Développement Natif Android : **Android NDK**
-* Cible : **Windows, UNIX**
+* Cible : **Android**
