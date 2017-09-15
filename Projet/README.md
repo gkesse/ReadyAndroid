@@ -6,8 +6,9 @@ La création d'un **Projet Android** nécessitent les technologies suivantes :
 
 # Création d'un Projet Android
 
-Pour la création d'un projet Android, sous Windows, je vous invite à créer
-un fichier script batch `cmp_create.bat` et à y insérer les instruction suivantes.
+Pour la création d'un projet Android, sous Windows :
+* Créez un fichier script batch `cmp_create.bat` 
+* Insérer les instruction suivantes :
 ```
 @echo off
 
@@ -32,3 +33,6 @@ android create project ^
 --activity %GACTIVITY% ^
 --package %GPKG%
 ```
+
+# Voir Aussi 
+* [ReadyAndroid](https://github.com/gkesse/ReadyAndroid "ReadyAndroid")  
