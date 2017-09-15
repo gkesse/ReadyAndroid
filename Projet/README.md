@@ -35,5 +35,8 @@ android create project ^
 --package %GPKG%
 ```
 
+# Structure d'un Projet Android
+![Structure](https://raw.githubusercontent.com/gkesse/ReadyAndroid/master/Projet/img/Structure.png)
+
 # Voir Aussi 
 * [ReadyAndroid](https://github.com/gkesse/ReadyAndroid "ReadyAndroid")  
