@@ -7,8 +7,9 @@ La création d'un **Projet Android** nécessitent les technologies suivantes :
 # Création d'un Projet Android
 
 Pour la création d'un projet Android, sous Windows :
-* Créez un fichier script batch `cmp_create.bat` 
-* Insérer les instruction suivantes :
+* Créez un fichier script batch `cmp_create_project.bat` 
+* Insérez les instructions ci-dessous
+* Exécutez le script en ligne de commande
 ```
 @echo off
 
@@ -20,7 +21,7 @@ set PATH=C:\NVPACK\android-sdk-windows\platform-tools;%PATH%
 set PATH=C:\NVPACK\android-sdk-windows\tools;%PATH%
 set PATH=C:\Ant\apache-ant-1.9.6\bin;%PATH%
 
-set GTARGET=android-17
+set GTARGET=android-19
 set GNAME=GApp
 set GPATH="../GProject"
 set GACTIVITY=GMain
