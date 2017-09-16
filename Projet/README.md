@@ -1,6 +1,6 @@
-# Projet Android
+# Démarrage d'un Projet Android
 
-La création d'un **Projet Android** nécessite les technologies suivantes :  
+Le démarrage d'un **Projet Android** nécessite les technologies suivantes :  
 * Kit de Développement Java : **JDK**
 * Kit de Développement Android : **Android SDK**
 * Compilation et Déploiement : **Ant**

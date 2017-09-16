@@ -16,7 +16,7 @@ C'est une bibliothèque développée en C/C++/Java et maintenu par
 [Gerard KESSE](http://5.48.215.193:8855/presentation/ "Accédez à mon site web (ReadyDev)").
 
 Les concepts abordés sur l'Installation :  
-* [Projet Android](https://github.com/gkesse/ReadyAndroid/tree/master/Projet "Projet Android")  
+* [Démarrage d'un Projet Android](https://github.com/gkesse/ReadyAndroid/tree/master/Projet#ssss "Démarrage d'un Projet Android")  
 * [Création d'un Projet Android](https://github.com/gkesse/ReadyAndroid/tree/master/Projet#création-dun-projet-android "Création d'un Projet Android")  
 * [Structure d'un Projet Android](https://github.com/gkesse/ReadyAndroid/tree/master/Projet#structure-dun-projet-android "Structure d'un Projet Android")  
 * [Création d'un Téléphone Android Virtuel](https://github.com/gkesse/ReadyAndroid/tree/master/Projet#création-dun-téléphone-android-virtuel "Création d'un Téléphone Android Virtuel")  
