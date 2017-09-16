@@ -9,10 +9,10 @@ La création d'une **Ressource** nécessite les actions suivantes :
 Nous allons créer la ressource ci-dessous :
 * Type de la ressource : **string**
 * Nom de la ressource : **hello_world**
-* Type de la ressource : **Resource : Hello World !**
+* Valeur de la ressource : **Resource : Hello World !**
 
 Pour créer la resource **hello_world** :
-* Ouvrez le fichier ressource XML (res/values/strings)
+* Ouvrez le fichier ressource XML (res/values/strings.xml)
 * Insérez le code ci-dessous
 * Enregistrez le fichier ressource XML
 ```
