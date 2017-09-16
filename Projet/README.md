@@ -92,6 +92,20 @@ set GGPU=host
 emulator -avd %GAVD% -gpu %GGPU%
 ```
 
+# Configuration d'un Téléphone Android Virtuel
+
+Pour activer le mode de débogage USB d'un téléphone Android :
+* Ouvrez le menu Android 
+* Allez dans le menu Dev Settings
+* Cochez l'option USB Debugging
+
+Pour modifier la langue d'un téléphone Android :
+* Ouvrez le menu Android 
+* Allez dans le menu Settings
+* Ouvrez le menu Languages & Inputs 
+* Allez dans le menu Languages
+* Choisissez une langue English(United State) 
+
 # Compilation d'un Projet Android
 
 Pour compiler un projet Android, sous Windows :
