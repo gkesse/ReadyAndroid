@@ -7,15 +7,7 @@ set PATH=C:\NVPACK\android-sdk-windows\platforms;%PATH%
 set PATH=C:\NVPACK\android-sdk-windows\platform-tools;%PATH%
 set PATH=C:\NVPACK\android-sdk-windows\tools;%PATH%
 
-set GTARGET=android-19
-set GNAME=GApp
-set GPATH=../GProject
-set GACTIVITY=GMain
-set GPKG=com.pkg.app
+set GNAME=GPhone
 
-android create project ^
---target %GTARGET% ^
---name %GNAME% ^
---path %GPATH% ^
---activity %GACTIVITY% ^
---package %GPKG%
+android delete avd ^
+-n %GNAME%

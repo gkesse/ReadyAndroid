@@ -8,14 +8,16 @@ set PATH=C:\NVPACK\android-sdk-windows\platform-tools;%PATH%
 set PATH=C:\NVPACK\android-sdk-windows\tools;%PATH%
 
 set GTARGET=android-19
-set GNAME=GApp
-set GPATH=../GProject
-set GACTIVITY=GMain
-set GPKG=com.pkg.app
+set GNAME=GPhone
+set GPATH=avd
+set GSDCARD=
+set GSKIN=HVGA-P
+set GABI=default/armeabi-v7a
 
-android create project ^
---target %GTARGET% ^
---name %GNAME% ^
---path %GPATH% ^
---activity %GACTIVITY% ^
---package %GPKG%
+android create avd ^
+-t %GTARGET% ^
+-n %GNAME% ^
+-p %GPATH% ^
+-c %GSDCARD% ^
+-s %GSKIN% ^
+--abi %GABI%

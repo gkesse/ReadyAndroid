@@ -6,16 +6,9 @@ set PATH=C:\NVPACK\android-sdk-windows;%PATH%
 set PATH=C:\NVPACK\android-sdk-windows\platforms;%PATH%
 set PATH=C:\NVPACK\android-sdk-windows\platform-tools;%PATH%
 set PATH=C:\NVPACK\android-sdk-windows\tools;%PATH%
+set PATH=C:\Ant\apache-ant-1.9.6\bin;%PATH%
 
-set GTARGET=android-19
-set GNAME=GApp
 set GPATH=../GProject
-set GACTIVITY=GMain
-set GPKG=com.pkg.app
+set GBUILD=%GPATH%/build.xml
 
-android create project ^
---target %GTARGET% ^
---name %GNAME% ^
---path %GPATH% ^
---activity %GACTIVITY% ^
---package %GPKG%
+ant -buildfile %GBUILD% debug install
