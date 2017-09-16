@@ -138,6 +138,7 @@ ant -buildfile %GBUILD% debug
 
 # Application Android (APK)
 ![Application Android](https://raw.githubusercontent.com/gkesse/ReadyAndroid/master/Projet/img/Application.png)
+![Resultat](https://raw.githubusercontent.com/gkesse/ReadyAndroid/master/Projet/img/Resultat.png)
 
 # Voir Aussi 
 * [ReadyAndroid](https://github.com/gkesse/ReadyAndroid "ReadyAndroid")  
