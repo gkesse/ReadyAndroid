@@ -27,7 +27,10 @@ Les concepts abordés sur l'Installation :
 * [Application Android](https://github.com/gkesse/ReadyAndroid/tree/master/Projet#application-android "Application Android")  
 
 Les concepts abordés sur les Bases :  
-* [Message](https://github.com/gkesse/ReadyAndroid/tree/master/Message "Message")  
+* [Resource](https://github.com/gkesse/ReadyAndroid/tree/master/Resource "Resource")  
+
+Les concepts abordés sur les Widgets :  
+* [TextView](https://github.com/gkesse/ReadyAndroid/tree/master/TextView "TextView")  
 
 # Technologies
 
