@@ -11,7 +11,7 @@ public class GMain extends Activity {
         super.onCreate(savedInstanceState);
         
         TextView tv = new TextView(this);
-        tv.setText("Hello Site du Zér0 !");
+        tv.setText("Hello World !");
         
         setContentView(tv);
     }
