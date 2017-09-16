@@ -136,7 +136,7 @@ set GBUILD=%GPATH%/build.xml
 ant -buildfile %GBUILD% debug
 ```
 
-# Application Android (APK)
+# Application Android
 ![Application Android](https://raw.githubusercontent.com/gkesse/ReadyAndroid/master/Projet/img/Application.png)
 ![Resultat](https://raw.githubusercontent.com/gkesse/ReadyAndroid/master/Projet/img/Resultat.png)
 
