@@ -4,8 +4,9 @@
 
 /**/.idea/
 /**/gradle/
-/**/build.gradle
+/**/*/build.gradle
 /**/gradle.properties
 /**/gradlew
 /**/gradlew.bat
 /**/settings.gradle
+/**/*/proguard-rules.pro 
