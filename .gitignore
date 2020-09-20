@@ -1,6 +1,11 @@
 #================================================
-# Eclipse
+# Android Studio
 #================================================
 
-/**/.metadata/
-/**/RemoteSystemsTempFiles/
+/**/.idea/
+/**/gradle/
+/**/build.gradle
+/**/gradle.properties
+/**/gradlew
+/**/gradlew.bat
+/**/settings.gradle
