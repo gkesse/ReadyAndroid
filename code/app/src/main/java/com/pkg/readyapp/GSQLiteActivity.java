@@ -85,6 +85,7 @@ public class GSQLiteActivity extends Activity implements OnClickListener {
             String lMenuN = m_menuName.get(lMenuT);
             if(lMenuN == null) lMenuN = lMenuT;
             lMenuB.setText(lMenuN);
+            lMenuB.setAllCaps(false);
             lMenuB.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
             lMenuB.setOnClickListener(this);
             m_bodyLayout.addView(lMenuB);
@@ -104,12 +105,14 @@ public class GSQLiteActivity extends Activity implements OnClickListener {
             if(i != 0) {
                 TextView lAddressC = new TextView(this);
                 lAddressC.setText(">");
+                lAddressC.setAllCaps(false);
                 lAddressC.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
                 m_addressLayout.addView(lAddressC);
             }
             String lAddressT = lAddressM[i];
             Button lAddressB = new Button(this);
             lAddressB.setText(lAddressT);
+            lMenuB.setAllCaps(false);
             lAddressB.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
             lAddressB.setOnClickListener(this);
             m_addressLayout.addView(lAddressB);

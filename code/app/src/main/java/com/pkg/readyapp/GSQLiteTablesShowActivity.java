@@ -72,6 +72,7 @@ public class GSQLiteTablesShowActivity extends Activity implements OnClickListen
             }
             Button lMenuB = new Button(this);
             lMenuB.setText(lMenuT);
+            lAddressC.setAllCaps(false);
             lMenuB.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
             lMenuB.setOnClickListener(this);
             m_bodyLayout.addView(lMenuB);
