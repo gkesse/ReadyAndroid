@@ -112,7 +112,7 @@ public class GSQLiteActivity extends Activity implements OnClickListener {
             String lAddressT = lAddressM[i];
             Button lAddressB = new Button(this);
             lAddressB.setText(lAddressT);
-            lMenuB.setAllCaps(false);
+            lAddressB.setAllCaps(false);
             lAddressB.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
             lAddressB.setOnClickListener(this);
             m_addressLayout.addView(lAddressB);
