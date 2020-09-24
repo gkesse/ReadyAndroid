@@ -10,3 +10,5 @@
 /**/gradlew.bat
 /**/settings.gradle
 /**/*/proguard-rules.pro 
+/**/*/androidTest
+/**/*/test
