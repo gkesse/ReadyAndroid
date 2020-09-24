@@ -15,12 +15,14 @@ public class GMainActivity extends Activity implements OnClickListener {
     private String VIEW_ID = "ADMIN"; 
     //===============================================
     private Map<View, String> m_menuId = new HashMap<View, String>();
-    private List<String> m_menuL = new ArrayList<String>();
+    private List<String> m_menuKey = new ArrayList<String>();
+    private Map<String, String> m_menuName = new HashMap<String, String>();
     //===============================================
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        createMenu();
+        createMenuKey();
+        createMenuName();
         createLayout();
         createIntent();
     }
@@ -36,11 +38,15 @@ public class GMainActivity extends Activity implements OnClickListener {
         //Toast.makeText(this, lMenuId, Toast.LENGTH_SHORT).show();
     }
     //===============================================
-    private void createMenu() {
-        m_menuL.add(VIEW_ID);
-        m_menuL.add("SQLITE");
-        m_menuL.add("OPENCV");
-        m_menuL.add("FILE");
+    private void createMenuKey() {
+        m_menuKey.add(VIEW_ID);
+        m_menuKey.add("SQLITE");
+        m_menuKey.add("OPENCV");
+        m_menuKey.add("FILE");
+    }
+    //===============================================
+    private void createMenuName() {
+        m_menuName.put(VIEW_ID, VIEW_ID);
     }
     //===============================================
     private void createLayout() {
@@ -48,11 +54,14 @@ public class GMainActivity extends Activity implements OnClickListener {
         lMainLayout.setOrientation(LinearLayout.VERTICAL);
         lMainLayout.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
                 
-        for(int i = 0; i < m_menuL.size(); i++) {
-            String lMenuId = m_menuL.get(0);
-            String lMenuT = m_menuL.get(i);
+        for(int i = 0; i < m_menuKey.size(); i++) {
+            String lMenuId = m_menuKey.get(0);
+            String lMenuT = m_menuKey.get(i);
             Button lMenuB = new Button(this);
-            lMenuB.setText(lMenuT);
+            String lMenuN = m_menuName.get(lMenuT);
+            if(lMenuN == null) lMenuN = lMenuT;
+            lMenuB.setText(lMenuN);
+            lMenuB.setAllCaps(false);
             lMenuB.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
             lMenuB.setOnClickListener(this);
             lMainLayout.addView(lMenuB);

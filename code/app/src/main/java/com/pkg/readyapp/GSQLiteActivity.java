@@ -15,7 +15,8 @@ public class GSQLiteActivity extends Activity implements OnClickListener {
     private String VIEW_ID = "ADMIN.SQLITE"; 
     //===============================================
     private Map<View, String> m_menuId = new HashMap<View, String>();
-    private List<String> m_menuL = new ArrayList<String>();
+    private List<String> m_menuKey = new ArrayList<String>();
+    private Map<String, String> m_menuName = new HashMap<String, String>();
     private LinearLayout m_mainLayout = null;
     private LinearLayout m_addressLayout = null;
     private LinearLayout m_bodyLayout = null;
@@ -23,7 +24,8 @@ public class GSQLiteActivity extends Activity implements OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        createMenu();
+        createMenuKey();
+        createMenuName();
         createLayout();
     }
     //===============================================
@@ -39,13 +41,24 @@ public class GSQLiteActivity extends Activity implements OnClickListener {
         //Toast.makeText(this, lMenuId, Toast.LENGTH_SHORT).show();
     }
     //===============================================
-    private void createMenu() {
-        m_menuL.add(VIEW_ID);
-        m_menuL.add("TABLES_SHOW");
-        m_menuL.add("CONFIG_ANDROID_CREATE");
-        m_menuL.add("CONFIG_ANDROID_SHOW");
-        m_menuL.add("CONFIG_ANDROID_DROP");
-        m_menuL.add("CONFIG_ANDROID_DELETE");
+    private void createMenuKey() {
+        m_menuKey.add(VIEW_ID);
+        m_menuKey.add("TABLES_SHOW");
+        m_menuKey.add("CONFIG_ANDROID_CREATE");
+        m_menuKey.add("CONFIG_ANDROID_SHOW");
+        m_menuKey.add("CONFIG_ANDROID_DROP");
+        m_menuKey.add("CONFIG_ANDROID_DELETE");
+        m_menuKey.add("CONFIG_ANDROID_ADD");
+    }
+    //===============================================
+    private void createMenuName() {
+        m_menuName.put("TABLES_SHOW", "Afficher les tables");
+        m_menuName.put("CONFIG_ANDROID_CREATE", "Créer la table CONFIG_ANDROID");
+        m_menuName.put("CONFIG_ANDROID_SHOW", "Afficher la table CONFIG_ANDROID");
+        m_menuName.put("CONFIG_ANDROID_CREATE", "Créer la table CONFIG_ANDROID");
+        m_menuName.put("CONFIG_ANDROID_DROP", "Supprimer la table CONFIG_ANDROID");
+        m_menuName.put("CONFIG_ANDROID_DELETE", "Supprimer une donnée CONFIG_ANDROID");
+        m_menuName.put("CONFIG_ANDROID_ADD", "Ajouter une donnée CONFIG_ANDROID");
     }
     //===============================================
     private void createLayout() {
@@ -61,15 +74,17 @@ public class GSQLiteActivity extends Activity implements OnClickListener {
         m_addressLayout.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
         m_bodyLayout.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
         
-        for(int i = 0; i < m_menuL.size(); i++) {
-            String lMenuId = m_menuL.get(0);
-            String lMenuT = m_menuL.get(i);
+        for(int i = 0; i < m_menuKey.size(); i++) {
+            String lMenuId = m_menuKey.get(0);
+            String lMenuT = m_menuKey.get(i);
             if(i == 0) {
                 createAddress(lMenuT);
                 continue;
             }
             Button lMenuB = new Button(this);
-            lMenuB.setText(lMenuT);
+            String lMenuN = m_menuName.get(lMenuT);
+            if(lMenuN == null) lMenuN = lMenuT;
+            lMenuB.setText(lMenuN);
             lMenuB.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
             lMenuB.setOnClickListener(this);
             m_bodyLayout.addView(lMenuB);

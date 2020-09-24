@@ -15,7 +15,8 @@ public class GSQLiteTablesShowActivity extends Activity implements OnClickListen
     private String VIEW_ID = "ADMIN.SQLITE.TABLES_SHOW"; 
     //===============================================
     private Map<View, String> m_menuId = new HashMap<View, String>();
-    private List<String> m_menuL = new ArrayList<String>();
+    private List<String> m_menuKey = new ArrayList<String>();
+    private Map<String, String> m_menuName = new HashMap<String, String>();
     private LinearLayout m_mainLayout = null;
     private LinearLayout m_addressLayout = null;
     private LinearLayout m_bodyLayout = null;
@@ -23,7 +24,8 @@ public class GSQLiteTablesShowActivity extends Activity implements OnClickListen
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        createMenu();
+        createMenuKey();
+        createMenuName();
         createLayout();
     }
     //===============================================
@@ -39,9 +41,13 @@ public class GSQLiteTablesShowActivity extends Activity implements OnClickListen
         //Toast.makeText(this, lMenuId, Toast.LENGTH_SHORT).show();
     }
     //===============================================
-    private void createMenu() {
-        m_menuL.add(VIEW_ID);
-        m_menuL.add("INTERFACE");
+    private void createMenuKey() {
+        m_menuKey.add(VIEW_ID);
+        m_menuKey.add("INTERFACE");
+    }
+    //===============================================
+    private void createMenuName() {
+        m_menuName.put(VIEW_ID, VIEW_ID);
     }
     //===============================================
     private void createLayout() {
@@ -57,9 +63,9 @@ public class GSQLiteTablesShowActivity extends Activity implements OnClickListen
         m_addressLayout.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
         m_bodyLayout.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
         
-        for(int i = 0; i < m_menuL.size(); i++) {
-            String lMenuId = m_menuL.get(0);
-            String lMenuT = m_menuL.get(i);
+        for(int i = 0; i < m_menuKey.size(); i++) {
+            String lMenuId = m_menuKey.get(0);
+            String lMenuT = m_menuKey.get(i);
             if(i == 0) {
                 createAddress(lMenuT);
                 continue;
