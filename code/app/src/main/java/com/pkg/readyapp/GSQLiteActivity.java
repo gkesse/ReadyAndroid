@@ -35,7 +35,9 @@ public class GSQLiteActivity extends Activity implements OnClickListener {
         if(lMenuId.equals(VIEW_ID)) return;
         Intent lIntent = GManager.Instance().getIntent(lMenuId);
         if(lIntent == null) return;
-        Toast.makeText(this, lMenuId + " - " + VIEW_ID, Toast.LENGTH_SHORT).show();
+        startActivity(lIntent);
+        finish();
+        //Toast.makeText(this, lMenuId, Toast.LENGTH_SHORT).show();
     }
     //===============================================
     private void createMenu() {
