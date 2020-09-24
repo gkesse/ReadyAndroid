@@ -10,9 +10,9 @@ import android.widget.LinearLayout.*;
 import android.content.*;
 import java.util.*;
 //===============================================
-public class GSQLiteActivity extends Activity implements OnClickListener {
+public class GSQLiteTablesShowActivity extends Activity implements OnClickListener {
     //===============================================
-    private String VIEW_ID = "ADMIN.SQLITE"; 
+    private String VIEW_ID = "ADMIN.SQLITE.TABLES_SHOW"; 
     //===============================================
     private Map<View, String> m_menuId = new HashMap<View, String>();
     private List<String> m_menuL = new ArrayList<String>();
@@ -41,11 +41,7 @@ public class GSQLiteActivity extends Activity implements OnClickListener {
     //===============================================
     private void createMenu() {
         m_menuL.add(VIEW_ID);
-        m_menuL.add("TABLES_SHOW");
-        m_menuL.add("CONFIG_ANDROID_CREATE");
-        m_menuL.add("CONFIG_ANDROID_SHOW");
-        m_menuL.add("CONFIG_ANDROID_DROP");
-        m_menuL.add("CONFIG_ANDROID_DELETE");
+        m_menuL.add("INTERFACE");
     }
     //===============================================
     private void createLayout() {

@@ -9,7 +9,6 @@ import android.widget.*;
 import android.widget.LinearLayout.*;
 import android.content.*;
 import java.util.*;
-import org.json.*;
 //===============================================
 public class GMainActivity extends Activity implements OnClickListener {
     //===============================================
@@ -38,7 +37,7 @@ public class GMainActivity extends Activity implements OnClickListener {
     }
     //===============================================
     private void createMenu() {
-        m_menuL.add("ADMIN");
+        m_menuL.add(VIEW_ID);
         m_menuL.add("SQLITE");
         m_menuL.add("OPENCV");
         m_menuL.add("FILE");
@@ -67,6 +66,7 @@ public class GMainActivity extends Activity implements OnClickListener {
     private void createIntent() {
         GManager.Instance().addIntent("ADMIN", getIntent()); 
         GManager.Instance().addIntent("ADMIN.SQLITE", new Intent(this, GSQLiteActivity.class)); 
+        GManager.Instance().addIntent("ADMIN.SQLITE.TABLES_SHOW", new Intent(this, GSQLiteTablesShowActivity.class)); 
     }
     //===============================================
 }

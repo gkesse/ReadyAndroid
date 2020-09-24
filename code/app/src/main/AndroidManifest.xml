@@ -20,6 +20,7 @@
         </activity>
         <!--=============================================-->
         <activity android:name=".GSQLiteActivity"></activity>
+        <activity android:name=".GSQLiteTablesShowActivity"></activity>
         <!--=============================================-->
     </application>
     <!--=============================================-->
