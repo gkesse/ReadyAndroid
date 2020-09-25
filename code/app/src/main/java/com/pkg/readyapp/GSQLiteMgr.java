@@ -22,7 +22,9 @@ public class GSQLiteMgr {
     }
     //===============================================
     public void test() {
+        sGAndroid lAndroid = GManager.Instance().dataGet().android;
         String lQuery = "";
+        String lValue = "";
         // suppression
         lQuery = ""+
         "drop table CONFIG_ANDROID\n"+
@@ -57,6 +59,13 @@ public class GSQLiteMgr {
         "select * from CONFIG_ANDROID\n"+
         "";
         queryShow(lQuery);
+        // valeur
+        lQuery = ""+
+        "select CONFIG_VALUE from CONFIG_ANDROID\n"+
+        "where CONFIG_KEY = 'MY_KEY_02'\n"+
+        "";
+        lValue = queryValue(lQuery);
+        Toast.makeText(lAndroid.context, lValue, Toast.LENGTH_SHORT).show();
     }
     //===============================================
     public void queryWrite(String sql) {        
@@ -77,12 +86,14 @@ public class GSQLiteMgr {
         String lValue = "";
         if(lCursor.moveToFirst()) {
             int lColCount = lCursor.getColumnCount();
+            int j = 0;
             while(true) {
+                if(j != 0) {lValue += "\n";}
+                j = 1;
                 for(int i = 0; i < lColCount; i++) {
                     if(i != 0) lValue += " | ";
                     lValue += lCursor.getString(i);
                 }
-                lValue += "\n";
                 if(!lCursor.moveToNext()) break;
             }
         }
