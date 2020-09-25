@@ -12,7 +12,7 @@ import java.util.*;
 //===============================================
 public class GSQLiteActivity extends Activity implements OnClickListener {
     //===============================================
-    private String VIEW_ID = "ADMIN.SQLITE"; 
+    private String G_VIEW_ID = "ADMIN.SQLITE"; 
     //===============================================
     private Map<View, String> m_menuId = new HashMap<View, String>();
     private List<String> m_menuKey = new ArrayList<String>();
@@ -31,10 +31,12 @@ public class GSQLiteActivity extends Activity implements OnClickListener {
     //===============================================
     @Override
     public void onClick(View v) {
+        sGAndroid lAndroid = GManager.Instance().dataGet().android;
+
         String lMenuId = m_menuId.get(v);
         if(lMenuId == null) return;
-        if(lMenuId.equals(VIEW_ID)) return;
-        Intent lIntent = GManager.Instance().getIntent(lMenuId);
+        if(lMenuId.equals(G_VIEW_ID)) return;
+        Intent lIntent = lAndroid.intent.get(lMenuId);
         if(lIntent == null) return;
         startActivity(lIntent);
         finish();
@@ -42,7 +44,7 @@ public class GSQLiteActivity extends Activity implements OnClickListener {
     }
     //===============================================
     private void createMenuKey() {
-        m_menuKey.add(VIEW_ID);
+        m_menuKey.add(G_VIEW_ID);
         m_menuKey.add("TABLES_SHOW");
         m_menuKey.add("CONFIG_ANDROID_CREATE");
         m_menuKey.add("CONFIG_ANDROID_SHOW");

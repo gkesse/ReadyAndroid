@@ -12,41 +12,47 @@ import java.util.*;
 //===============================================
 public class GMainActivity extends Activity implements OnClickListener {
     //===============================================
-    private String VIEW_ID = "ADMIN"; 
+    private String G_VIEW_ID = "ADMIN"; 
     //===============================================
     private Map<View, String> m_menuId = new HashMap<View, String>();
     private List<String> m_menuKey = new ArrayList<String>();
     private Map<String, String> m_menuName = new HashMap<String, String>();
     //===============================================
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {      
         super.onCreate(savedInstanceState);
         createMenuKey();
         createMenuName();
         createLayout();
         createIntent();
+        
+        sGAndroid lAndroid = GManager.Instance().dataGet().android;
+        lAndroid.context  = this;
+        GSQLiteMgr.Instance().test();
     }
     //===============================================
     @Override
     public void onClick(View v) {
+        sGAndroid lAndroid = GManager.Instance().dataGet().android;
+
         String lMenuId = m_menuId.get(v);
         if(lMenuId == null) return;
-        if(lMenuId.equals(VIEW_ID)) return;
-        Intent lIntent = GManager.Instance().getIntent(lMenuId);
+        if(lMenuId.equals(G_VIEW_ID)) return;
+        Intent lIntent = lAndroid.intent.get(lMenuId);
         if(lIntent == null) return;
         startActivity(lIntent);
         //Toast.makeText(this, lMenuId, Toast.LENGTH_SHORT).show();
     }
     //===============================================
     private void createMenuKey() {
-        m_menuKey.add(VIEW_ID);
+        m_menuKey.add(G_VIEW_ID);
         m_menuKey.add("SQLITE");
         m_menuKey.add("OPENCV");
         m_menuKey.add("FILE");
     }
     //===============================================
     private void createMenuName() {
-        m_menuName.put(VIEW_ID, VIEW_ID);
+        m_menuName.put(G_VIEW_ID, G_VIEW_ID);
     }
     //===============================================
     private void createLayout() {
@@ -73,9 +79,10 @@ public class GMainActivity extends Activity implements OnClickListener {
     }
     //===============================================
     private void createIntent() {
-        GManager.Instance().addIntent("ADMIN", getIntent()); 
-        GManager.Instance().addIntent("ADMIN.SQLITE", new Intent(this, GSQLiteActivity.class)); 
-        GManager.Instance().addIntent("ADMIN.SQLITE.TABLES_SHOW", new Intent(this, GSQLiteTablesShowActivity.class)); 
+        sGAndroid lAndroid = GManager.Instance().dataGet().android;
+        lAndroid.intent.put("ADMIN", getIntent()); 
+        lAndroid.intent.put("ADMIN.SQLITE", new Intent(this, GSQLiteActivity.class)); 
+        lAndroid.intent.put("ADMIN.SQLITE.TABLES_SHOW", new Intent(this, GSQLiteTablesShowActivity.class)); 
     }
     //===============================================
 }

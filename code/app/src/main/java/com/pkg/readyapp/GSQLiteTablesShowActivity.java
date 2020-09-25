@@ -12,7 +12,7 @@ import java.util.*;
 //===============================================
 public class GSQLiteTablesShowActivity extends Activity implements OnClickListener {
     //===============================================
-    private String VIEW_ID = "ADMIN.SQLITE.TABLES_SHOW"; 
+    private String G_VIEW_ID = "ADMIN.SQLITE.TABLES_SHOW"; 
     //===============================================
     private Map<View, String> m_menuId = new HashMap<View, String>();
     private List<String> m_menuKey = new ArrayList<String>();
@@ -31,10 +31,12 @@ public class GSQLiteTablesShowActivity extends Activity implements OnClickListen
     //===============================================
     @Override
     public void onClick(View v) {
+        sGAndroid lAndroid = GManager.Instance().dataGet().android;
+
         String lMenuId = m_menuId.get(v);
         if(lMenuId == null) return;
-        if(lMenuId.equals(VIEW_ID)) return;
-        Intent lIntent = GManager.Instance().getIntent(lMenuId);
+        if(lMenuId.equals(G_VIEW_ID)) return;
+        Intent lIntent = lAndroid.intent.get(lMenuId);
         if(lIntent == null) return;
         startActivity(lIntent);
         finish();
@@ -42,12 +44,12 @@ public class GSQLiteTablesShowActivity extends Activity implements OnClickListen
     }
     //===============================================
     private void createMenuKey() {
-        m_menuKey.add(VIEW_ID);
+        m_menuKey.add(G_VIEW_ID);
         m_menuKey.add("INTERFACE");
     }
     //===============================================
     private void createMenuName() {
-        m_menuName.put(VIEW_ID, VIEW_ID);
+        m_menuName.put(G_VIEW_ID, G_VIEW_ID);
     }
     //===============================================
     private void createLayout() {
