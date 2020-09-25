@@ -34,6 +34,31 @@ public class GManager {
         return m_mgr;
     }
     //===============================================
+    public void showData(String data) {        
+        Toast.makeText(m_mgr.android.context, data, Toast.LENGTH_SHORT).show();
+    }
+    //===============================================
+    public void showList(List<String> data) {        
+        String lData = "";
+        for(int i = 0; i < data.size(); i++) {
+            if(i != 0) lData += "\n";
+            lData += data.get(i);
+        }
+        Toast.makeText(m_mgr.android.context, lData, Toast.LENGTH_SHORT).show();
+    }
+    //===============================================
+    public void showMap(List<List<String>> data) {
+        String lData = "";
+        for(int i = 0; i < data.size(); i++) {
+            if(i != 0) lData += "\n";
+            for(int j = 0; j < data.get(i).size(); j++) {
+                if(j != 0) lData += " | ";
+                lData += data.get(i).get(j);
+            }
+        }
+        Toast.makeText(m_mgr.android.context, lData, Toast.LENGTH_SHORT).show();
+    }
+    //===============================================
 }
 //===============================================
 class sGManager {
