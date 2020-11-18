@@ -5,11 +5,15 @@ import android.content.*;
 import android.widget.*;
 import java.util.*;
 //===============================================
+// manager
+//===============================================
 public class GManager {
     //===============================================
     private static GManager m_instance = null;     
     //===============================================
     private sGManager m_mgr;
+    //===============================================
+    // constructor
     //===============================================
     private GManager() {
         // manager
@@ -30,9 +34,13 @@ public class GManager {
         return m_instance;
     }
     //===============================================
+    // data
+    //===============================================
     public sGManager dataGet() {           
         return m_mgr;
     }
+    //===============================================
+    // show_data
     //===============================================
     public void showData(String data) {        
         Toast.makeText(m_mgr.android.context, data, Toast.LENGTH_SHORT).show();
@@ -60,6 +68,8 @@ public class GManager {
     }
     //===============================================
 }
+//===============================================
+// struct
 //===============================================
 class sGManager {
     public sGAndroid android;

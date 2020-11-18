@@ -19,8 +19,7 @@
             </intent-filter>
         </activity>
         <!--=============================================-->
-        <activity android:name=".GSQLiteActivity"></activity>
-        <activity android:name=".GSQLiteTablesShowActivity"></activity>
+        <activity android:name=".GSecondActivity"></activity>
         <!--=============================================-->
     </application>
     <!--=============================================-->

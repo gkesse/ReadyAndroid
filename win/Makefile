@@ -1,13 +1,8 @@
-GSRC = ..\code\GProject\src
-GBIN = bin
-GBUILD = build
-GTARGET = $(GBIN)\gp_go.exe
-
-all: 
-
+android_studio:
+	studio64
 apk_install:
 	adb install $(GAPK)
-nox: 
+nox_start: 
 	Nox
 nox_stop: 
 	nox_adb kill-server
@@ -15,7 +10,7 @@ nox_connect:
 	nox_adb connect $(GSERVER_IP):$(GSERVER_PORT)
 nox_install: 
 	Nox "-apk:$(GAPK)"
-avd: 
+avd_start: 
 	emulator -avd $(GAVD_NAME)
 avd_list: 
 	emulator -list-avds

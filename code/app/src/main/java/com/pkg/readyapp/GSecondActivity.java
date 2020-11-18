@@ -10,7 +10,7 @@ import android.widget.LinearLayout.*;
 import android.content.*;
 import android.net.*;
 //===============================================
-public class GMainActivity extends Activity {
+public class GSecondActivity extends Activity implements OnClickListener {
     //===============================================
     @Override
     protected void onCreate(Bundle savedInstanceState) {      
@@ -19,21 +19,25 @@ public class GMainActivity extends Activity {
         LinearLayout lMainLayout = new LinearLayout(this);
         lMainLayout.setOrientation(LinearLayout.VERTICAL);
         lMainLayout.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
-                        
+
         TextView lTextView = new TextView(this);
-        lTextView.setText("Je suis l'activié principale");
+        lTextView.setText("Activité secondaire");
         
-        GFragment lFragment = new GFragment();
-        LinearLayout lFragLayout = new LinearLayout(this);
-        lFragLayout.setOrientation(LinearLayout.VERTICAL);
-        lFragLayout.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
-        lFragLayout.setId(View.generateViewId());
-        getFragmentManager().beginTransaction().add(lFragLayout.getId(), lFragment).commit();
-                
+        Button lButton = new Button(this);
+        lButton.setText("Terminer");
+        lButton.setAllCaps(false);
+        lButton.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
+        lButton.setOnClickListener(this);
+        
         lMainLayout.addView(lTextView);
-        lMainLayout.addView(lFragLayout);
+        lMainLayout.addView(lButton);
 
         setContentView(lMainLayout);
+    }
+    //===============================================
+    @Override
+    public void onClick(View v) {
+        finish();
     }
     //===============================================
 }
