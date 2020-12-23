@@ -16,7 +16,9 @@ public class GMainActivity extends Activity {
         lMainLayout.setOrientation(LinearLayout.VERTICAL);       
         lMainLayout.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
         
-        lMainLayout.addView(GWidget.Create("listbox", this));
+        lMainLayout.addView(GWidget.Create("addressbar", this));
+        lMainLayout.addView(GWidget.Create("addresskey", this));
+        lMainLayout.addView(GWidget.Create("stackwidget", this));
         
         setContentView(lMainLayout);
     }

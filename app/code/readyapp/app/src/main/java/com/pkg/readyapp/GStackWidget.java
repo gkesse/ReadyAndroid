@@ -6,14 +6,14 @@ import android.content.*;
 import android.widget.*;
 import android.widget.LinearLayout.*;
 //===============================================
-public class GListBox extends GWidget {
+public class GStackWidget extends GWidget {
     //===============================================
-    public GListBox(Context context) {
+    public GStackWidget(Context context) {
         super(context);
         setOrientation(LinearLayout.VERTICAL);       
         setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
         TextView lTextView = new TextView(context);
-        lTextView.setText("GListBox");
+        lTextView.setText("GStackWidget");
         addView(lTextView);
     }
     //===============================================
