@@ -16,9 +16,13 @@ public class GMainActivity extends Activity {
         lMainLayout.setOrientation(LinearLayout.VERTICAL);       
         lMainLayout.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
         
-        lMainLayout.addView(GWidget.Create("addressbar", this));
-        lMainLayout.addView(GWidget.Create("addresskey", this));
-        lMainLayout.addView(GWidget.Create("stackwidget", this));
+        GWidget lAddressBar = GWidget.Create("addressbar", this);
+        GWidget lAddressKey = GWidget.Create("addresskey", this);
+        GWidget lStackWidget = GWidget.Create("stackwidget", this);
+        
+        lMainLayout.addView(lAddressBar);
+        lMainLayout.addView(lAddressKey);
+        lMainLayout.addView(lStackWidget);
         
         setContentView(lMainLayout);
     }
