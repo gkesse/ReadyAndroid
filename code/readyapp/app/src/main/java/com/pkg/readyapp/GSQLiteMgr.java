@@ -1,0 +1,185 @@
+//===============================================
+package com.pkg.readyapp;
+//===============================================
+import android.content.*;
+import android.widget.*;
+import android.database.*;
+import android.database.sqlite.*;
+import java.util.*;
+//===============================================
+public class GSQLiteMgr {
+    //===============================================
+    private static GSQLiteMgr m_instance = null;     
+    //===============================================
+    private GSQLiteMgr() {
+        
+    }
+    //===============================================
+    public static synchronized GSQLiteMgr Instance() {           
+        if(m_instance == null) {   
+            m_instance = new GSQLiteMgr(); 
+        }
+        return m_instance;
+    }
+    //===============================================
+    public void test() {
+        sGAndroid lAndroid = GManager.Instance().dataGet().android;
+        String lQuery = "";
+        String lValue = "";
+        // suppression
+        lQuery = ""+
+        "drop table CONFIG_ANDROID\n"+
+        "";
+        queryWrite(lQuery);
+        // creation
+        lQuery = ""+
+        "create table CONFIG_ANDROID(\n"+
+        "CONFIG_KEY text unique not null,\n"+
+        "CONFIG_VALUE text\n"+
+        ")\n"+
+        "";
+        queryWrite(lQuery);
+        // creation
+        lQuery = ""+
+        "insert into CONFIG_ANDROID(CONFIG_KEY, CONFIG_VALUE)\n"+
+        "values('MY_KEY_01', 'MY_VALUE_01')\n"+
+        "";
+        queryWrite(lQuery);
+        lQuery = ""+
+        "insert into CONFIG_ANDROID(CONFIG_KEY, CONFIG_VALUE)\n"+
+        "values('MY_KEY_02', 'MY_VALUE_02')\n"+
+        "";
+        queryWrite(lQuery);
+        lQuery = ""+
+        "insert into CONFIG_ANDROID(CONFIG_KEY, CONFIG_VALUE)\n"+
+        "values('MY_KEY_03', 'MY_VALUE_03')\n"+
+        "";
+        queryWrite(lQuery);
+        // affichage
+        lQuery = ""+
+        "select * from CONFIG_ANDROID\n"+
+        "";
+        queryShow(lQuery);
+        // valeur
+        lQuery = ""+
+        "select CONFIG_VALUE from CONFIG_ANDROID\n"+
+        "where CONFIG_KEY = 'MY_KEY_02'\n"+
+        "";
+        lValue = queryValue(lQuery);
+        Toast.makeText(lAndroid.context, lValue, Toast.LENGTH_SHORT).show();
+        // colonne
+        lQuery = ""+
+        "select CONFIG_KEY from CONFIG_ANDROID\n"+
+        "";
+        lValue = queryValue(lQuery);
+        GManager.Instance().showList(queryCol(lQuery));
+        // ligne
+        lQuery = ""+
+        "select * from CONFIG_ANDROID\n"+
+        "where CONFIG_KEY = 'MY_KEY_02'\n"+
+        "";
+        lValue = queryValue(lQuery);
+        GManager.Instance().showList(queryRow(lQuery));
+        // matrice
+        lQuery = ""+
+        "select * from CONFIG_ANDROID\n"+
+        "";
+        lValue = queryValue(lQuery);
+        GManager.Instance().showMap(queryMap(lQuery));
+    }
+    //===============================================
+    public void queryWrite(String sql) {        
+        sGAndroid lAndroid = GManager.Instance().dataGet().android;
+        sGSQLite lSqlite = GManager.Instance().dataGet().sqlite;
+        GSQLiteHelper lDbHelper = new GSQLiteHelper(lAndroid.context, lSqlite.db_name, lSqlite.db_version);
+        SQLiteDatabase lDb = lDbHelper.getWritableDatabase();
+        lDb.execSQL(sql);
+        lDb.close();
+    }
+    //===============================================
+    public void queryShow(String sql) {        
+        GManager.Instance().showMap(queryMap(sql));
+    }
+    //===============================================
+    public String queryValue(String sql) {        
+        sGAndroid lAndroid = GManager.Instance().dataGet().android;
+        sGSQLite lSqlite = GManager.Instance().dataGet().sqlite;
+        GSQLiteHelper lDbHelper = new GSQLiteHelper(lAndroid.context, lSqlite.db_name, lSqlite.db_version);
+        SQLiteDatabase lDb = lDbHelper.getWritableDatabase();
+        Cursor lCursor = lDb.rawQuery(sql, null);
+        String lValue = "";
+        if(lCursor.moveToFirst()) {
+            lValue = lCursor.getString(0);
+        }
+        lCursor.close();
+        lDb.close();
+        return lValue;
+    }
+    //===============================================
+    public List<String> queryCol(String sql) {        
+        sGAndroid lAndroid = GManager.Instance().dataGet().android;
+        sGSQLite lSqlite = GManager.Instance().dataGet().sqlite;
+        GSQLiteHelper lDbHelper = new GSQLiteHelper(lAndroid.context, lSqlite.db_name, lSqlite.db_version);
+        SQLiteDatabase lDb = lDbHelper.getWritableDatabase();
+        Cursor lCursor = lDb.rawQuery(sql, null);
+        List<String> lValueMap = new ArrayList<String>();
+        if(lCursor.moveToFirst()) {
+            while(true) {
+                String lValue = lCursor.getString(0);
+                lValueMap.add(lValue);
+                if(!lCursor.moveToNext()) break;
+            }
+        }
+        lCursor.close();
+        lDb.close();
+        return lValueMap;
+    }
+    //===============================================
+    public List<String> queryRow(String sql) {        
+        sGAndroid lAndroid = GManager.Instance().dataGet().android;
+        sGSQLite lSqlite = GManager.Instance().dataGet().sqlite;
+        GSQLiteHelper lDbHelper = new GSQLiteHelper(lAndroid.context, lSqlite.db_name, lSqlite.db_version);
+        SQLiteDatabase lDb = lDbHelper.getWritableDatabase();
+        Cursor lCursor = lDb.rawQuery(sql, null);
+        List<String> lValueMap = new ArrayList<String>();
+        if(lCursor.moveToFirst()) {
+            int lColCount = lCursor.getColumnCount();
+            while(true) {
+                for(int i = 0; i < lColCount; i++) {
+                    String lValue = lCursor.getString(i);
+                    lValueMap.add(lValue);
+                }
+                break;
+            }
+        }
+        lCursor.close();
+        lDb.close();
+        return lValueMap;
+    }
+    //===============================================
+    public List<List<String>> queryMap(String sql) {        
+        sGAndroid lAndroid = GManager.Instance().dataGet().android;
+        sGSQLite lSqlite = GManager.Instance().dataGet().sqlite;
+        GSQLiteHelper lDbHelper = new GSQLiteHelper(lAndroid.context, lSqlite.db_name, lSqlite.db_version);
+        SQLiteDatabase lDb = lDbHelper.getWritableDatabase();
+        Cursor lCursor = lDb.rawQuery(sql, null);
+        List<List<String>> lValueMap = new ArrayList<List<String>>();
+        if(lCursor.moveToFirst()) {
+            int lColCount = lCursor.getColumnCount();
+            while(true) {
+                List<String> lValueList = new ArrayList<String>();
+                for(int i = 0; i < lColCount; i++) {
+                    String lValue = lCursor.getString(i);
+                    lValueList.add(lValue);
+                }
+                lValueMap.add(lValueList);
+                if(!lCursor.moveToNext()) break;
+            }
+        }
+        lCursor.close();
+        lDb.close();
+        return lValueMap;
+    }
+    //===============================================
+}
+//===============================================

@@ -1,0 +1,61 @@
+<resources>
+    <!-- ============================================ -->
+    <!-- AppTheme -->
+    <!-- ============================================ -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <!-- ============================================ -->
+        <item name="android:background">#201010</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:fontFamily">@font/allan_regular</item>
+        <!-- ============================================ -->
+        <item name="android:buttonStyle">@style/GButton</item>
+        <item name="android:textViewStyle">@style/GTextView</item>
+        <!-- ============================================ -->
+    </style>
+    <!-- ============================================ -->
+    <!-- GTextView -->
+    <!-- ============================================ -->
+    <style name="GTextView" parent="@android:style/Widget.TextView">
+        <item name="android:fontFamily">?android:attr/fontFamily</item>
+	</style>
+    <!-- ============================================ -->
+    <!-- GButton -->
+    <!-- ============================================ -->
+    <style name="GButton" parent="@android:style/Widget.Button">
+        <item name="android:background">?android:attr/background</item>
+        <item name="android:textColor">?android:attr/textColor</item>
+	</style>
+    <!-- ============================================ -->
+    <!-- GMainActivity -->
+    <!-- ============================================ -->
+    <style name="GMainActivity_Red" parent="@android:style/Widget.Button">
+        <item name="android:background">#aa1010</item>
+        <item name="android:minWidth">200sp</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:padding">10sp</item>
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:textSize">20sp</item>
+	</style>
+    <!-- ============================================ -->
+    <style name="GMainActivity_Green" parent="@android:style/Widget.Button">
+        <item name="android:background">#10aa10</item>
+        <item name="android:minWidth">200sp</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:padding">10sp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:textSize">20sp</item>
+	</style>
+    <!-- ============================================ -->
+    <style name="GMainActivity_Blue" parent="@android:style/Widget.Button">
+        <item name="android:background">#1010aa</item>
+        <item name="android:minWidth">200sp</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:padding">10sp</item>
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:textSize">20sp</item>
+	</style>
+    <!-- ============================================ -->
+</resources>
