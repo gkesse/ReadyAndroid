@@ -1,11 +1,12 @@
-all:
+all: apk_install
+nox: nox_start
 
 android_studio:
-	studio64
+	studio64 &
 apk_install:
 	adb install $(GPROJECT_APK)
 nox_start: 
-	Nox
+	Nox &
 nox_stop: 
 	nox_adb kill-server
 nox_connect: 
@@ -17,6 +18,6 @@ avd_start:
 avd_list: 
 	emulator -list-avds
 grad_install: 
-	cd $(GPROJECT_SRC) && gradlew installDebug
+	cd $(GPROJECT_SRC) && ./gradlew installDebug
 grad_tasks: 
-	cd $(GPROJECT_SRC) && gradlew tasks
+	cd $(GPROJECT_SRC) && ./gradlew tasks
