@@ -1,5 +1,7 @@
 all:
 
+nox: nox_install
+
 android_studio:
 	studio64
 apk_install:
