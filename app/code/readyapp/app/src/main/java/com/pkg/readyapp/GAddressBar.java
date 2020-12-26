@@ -17,6 +17,7 @@ public class GAddressBar extends GWidget {
         Button lIcon = new Button(context);
         lIcon.setText("icon");
         lIcon.setBackgroundColor(Color.parseColor("#503030"));
+        lIcon.setTopLeftCornerRadius(10);
         
         EditText lAddress = new EditText(context);
         lAddress.setSingleLine(true);
