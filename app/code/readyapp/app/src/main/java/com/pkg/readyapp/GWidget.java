@@ -3,6 +3,7 @@ package com.pkg.readyapp;
 //===============================================
 import android.widget.*;
 import android.content.*;
+import android.util.*;
 //===============================================
 public class GWidget extends LinearLayout {
     //===============================================
@@ -11,6 +12,7 @@ public class GWidget extends LinearLayout {
     }
     //===============================================
     public static GWidget Create(String key, Context context) {
+        // widget
         if(key == "widget") {return new GWidget(context);}
         if(key == "listbox") {return new GListBox(context);}
         if(key == "addressbar") {return new GAddressBar(context);}

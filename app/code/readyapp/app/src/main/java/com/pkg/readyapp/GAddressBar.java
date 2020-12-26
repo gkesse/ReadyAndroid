@@ -5,6 +5,7 @@ import android.widget.*;
 import android.content.*;
 import android.widget.*;
 import android.widget.LinearLayout.*;
+import android.graphics.*;
 //===============================================
 public class GAddressBar extends GWidget {
     //===============================================
@@ -15,12 +16,14 @@ public class GAddressBar extends GWidget {
         
         Button lIcon = new Button(context);
         lIcon.setText("icon");
+        lIcon.setBackgroundColor(Color.parseColor("#503030"));
         
         EditText lAddress = new EditText(context);
         lAddress.setSingleLine(true);
         
         Button lGoTo = new Button(context);
         lGoTo.setText("goto");
+        lGoTo.setBackgroundColor(Color.parseColor("#503030"));
         
         addView(lIcon, new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
         addView(lAddress, new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 1));
