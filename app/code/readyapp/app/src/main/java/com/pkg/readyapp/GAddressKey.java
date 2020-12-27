@@ -30,6 +30,7 @@ public class GAddressKey extends GWidget implements OnClickListener {
         removeAllViews();
 
         String[] lMap = text.split("/");
+        String lKeyId = "";
 
         for(int i = 0; i < lMap.length; i++) {
             if(i != 0) {
@@ -49,7 +50,11 @@ public class GAddressKey extends GWidget implements OnClickListener {
             lButton.setText(lKey);
             lButton.setBackground(lButtonBg);
             lButton.setOnClickListener(this);
-            m_widgetMap.put(lButton, lKey);
+            
+            if(i != 0) lKeyId += "/";
+            lKeyId += lKey;
+            
+            m_widgetMap.put(lButton, lKeyId);
             
             addView(lButton);
         }        
