@@ -100,14 +100,14 @@ public class GManager {
         // app
         public String app_name;
         // context
-        Context context;
+        public Context context;
         // address
-        GWidget address_key;
+        public GWidget address_key;
         // widget
-        String widget_id;
+        public String widget_id;
         // page
-        GWidget page_map;
-        private HashMap<String, Integer> page_id;
+        public GWidget page_map;
+        public HashMap<String, Integer> page_id;
         // button
         public String button_bg;
         public String button_border;
