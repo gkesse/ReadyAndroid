@@ -7,6 +7,8 @@ import android.widget.*;
 import android.widget.LinearLayout.*;
 import android.graphics.*;
 import android.graphics.drawable.*;
+import android.view.*;
+import android.view.View.*;
 import java.util.*;
 //===============================================
 public class GAddressBar extends GWidget implements OnClickListener {
