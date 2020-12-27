@@ -28,7 +28,7 @@ public class GAddressBar extends GWidget implements OnClickListener {
         lIcon.setText("icon");
         lIcon.setBackground(lIconBg);
         lIcon.setOnClickListener(this);
-        m_widgetMap[lIcon] = "icon";
+        m_widgetMap.put(lIcon, "icon");
         
         EditText lAddress = new EditText(context);
         lAddress.setSingleLine(true);
@@ -42,7 +42,7 @@ public class GAddressBar extends GWidget implements OnClickListener {
         lGoTo.setText("goto");
         lGoTo.setBackground(lGoToBg);
         lGoTo.setOnClickListener(this);
-        m_widgetMap[lGoTo] = "goto";
+        m_widgetMap.put(lGoTo, "goto");
         
         setOrientation(LinearLayout.HORIZONTAL);       
         setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT));
@@ -53,7 +53,7 @@ public class GAddressBar extends GWidget implements OnClickListener {
     //===============================================
     @Override
     public void onClick(View v) {
-        String lWidgetId = m_widgetMap[v];
+        String lWidgetId = m_widgetMap.get(v);
         GManager.Instance().showMessage(lWidgetId);
     }
     //===============================================
