@@ -102,6 +102,8 @@ public class GManager {
         Context context;
         // address
         GWidget address_key;
+        // widget
+        String widget_id;
         // button
         public String button_bg;
         public String button_border;

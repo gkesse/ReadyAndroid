@@ -49,8 +49,10 @@ public class GListBox extends GWidget implements OnClickListener {
     //===============================================
     @Override
     public void onClick(View v) {
+        GManager.sGApp lApp = GManager.Instance().getData().app;
         String lWidgetId = m_widgetMap.get(v);
-        GManager.Instance().showMessage(lWidgetId);
+        lApp.widget_id = lWidgetId;
+        emitOnItemClick();
     }
     //===============================================
 }

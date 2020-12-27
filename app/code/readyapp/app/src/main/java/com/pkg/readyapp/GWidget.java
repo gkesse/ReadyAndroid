@@ -4,8 +4,13 @@ package com.pkg.readyapp;
 import android.widget.*;
 import android.content.*;
 import android.util.*;
+import java.util.*;
 //===============================================
 public class GWidget extends LinearLayout {
+    //===============================================
+    // property
+    //===============================================
+    protected List<GWidget> m_itemMap = new ArrayList<GWidget>();
     //===============================================
     // constructor
     //===============================================
@@ -26,18 +31,26 @@ public class GWidget extends LinearLayout {
         return new GWidget(context); 
     }
     //===============================================
+    // observer
+    //===============================================
+    public void addOnItemClick(GWidget obj) {
+        m_itemMap.add(obj);
+    }
+    //===============================================
+    public void emitOnItemClick() {
+        for(GWidget lObj : m_itemMap) {
+            lObj.onItemClick();
+        }
+    }
+    //===============================================
     // method
     //===============================================
     public void setContent(String text) {}
-    public void setOnItemClcik(OnItemClick obj) {}
     public void addItem(String text, String key) {}
     //===============================================
     // callback
     //===============================================
-    interface OnItemClick {
-        void onItemClcik();
-    }
-    //===============================================
+    protected void onItemClick() {}
     //===============================================
 }
 //===============================================
