@@ -29,18 +29,30 @@ public class GAddressKey extends GWidget implements OnClickListener {
         GManager.sGApp lApp = GManager.Instance().getData().app;
         removeAllViews();
 
-        GradientDrawable lButtonBg = new GradientDrawable();
-        lButtonBg.setColor(Color.parseColor(lApp.button_bg));
-        lButtonBg.setCornerRadius(lApp.button_border_radius);
-        lButtonBg.setStroke(lApp.button_border_width, Color.parseColor(lApp.button_border));
-        
-        Button lButton = new Button(lApp.context);
-        lButton.setText(text);
-        lButton.setBackground(lButtonBg);
-        lButton.setOnClickListener(this);
-        m_widgetMap.put(lButton, "item");
-        
-        addView(lButton);
+        String[] lMap = text.split("/");
+
+        for(int i = 0; i < lMap.length; i++) {
+            if(i != 0) {
+                Button lButton = new Button(lApp.context);
+                lButton.setText(">");
+                addView(lButton);
+            }
+            
+            String lKey = lMap[i];
+            
+            GradientDrawable lButtonBg = new GradientDrawable();
+            lButtonBg.setColor(Color.parseColor(lApp.button_bg));
+            lButtonBg.setCornerRadius(lApp.button_border_radius);
+            lButtonBg.setStroke(lApp.button_border_width, Color.parseColor(lApp.button_border));
+            
+            Button lButton = new Button(lApp.context);
+            lButton.setText(lKey);
+            lButton.setBackground(lButtonBg);
+            lButton.setOnClickListener(this);
+            m_widgetMap.put(lButton, "item");
+            
+            addView(lButton);
+        }        
     }
     //===============================================
     // callback
