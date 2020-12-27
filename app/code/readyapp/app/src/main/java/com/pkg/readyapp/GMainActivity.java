@@ -17,6 +17,8 @@ public class GMainActivity extends Activity {
         GWidget lAddressBar = GWidget.Create("addressbar", this);
         GWidget lAddressKey = GWidget.Create("addresskey", this);
         GWidget lStackWidget = GWidget.Create("stackwidget", this);
+        lStackWidget.addItem(GWidget.Create("home", this));
+        lStackWidget.addItem(GWidget.Create("home", this));
         
         LinearLayout lMainLayout = new LinearLayout(this);
         lMainLayout.setOrientation(LinearLayout.VERTICAL);       

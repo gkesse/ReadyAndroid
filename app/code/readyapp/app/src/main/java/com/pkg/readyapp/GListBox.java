@@ -29,15 +29,9 @@ public class GListBox extends GWidget implements OnClickListener {
     //===============================================
     public void addItem(String text, String key) {
         GManager.sGApp lApp = GManager.Instance().getData().app;
-
-        GradientDrawable lButtonBg = new GradientDrawable();
-        lButtonBg.setColor(Color.parseColor(lApp.button_bg));
-        lButtonBg.setCornerRadius(lApp.button_border_radius);
-        lButtonBg.setStroke(lApp.button_border_width, Color.parseColor(lApp.button_border));
         
         Button lButton = new Button(lApp.context);
         lButton.setText(text);
-        lButton.setBackground(lButtonBg);
         lButton.setOnClickListener(this);
 
         m_widgetMap.put(lButton, key);

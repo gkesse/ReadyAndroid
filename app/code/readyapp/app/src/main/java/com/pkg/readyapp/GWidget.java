@@ -4,6 +4,7 @@ package com.pkg.readyapp;
 import android.widget.*;
 import android.content.*;
 import android.util.*;
+import android.view.*;
 import java.util.*;
 //===============================================
 public class GWidget extends LinearLayout {
@@ -47,6 +48,7 @@ public class GWidget extends LinearLayout {
     //===============================================
     public void setContent(String text) {}
     public void addItem(String text, String key) {}
+    public void addItem(View v) {}
     //===============================================
     // callback
     //===============================================
