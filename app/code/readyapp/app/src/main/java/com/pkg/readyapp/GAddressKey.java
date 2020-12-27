@@ -49,7 +49,7 @@ public class GAddressKey extends GWidget implements OnClickListener {
             lButton.setText(lKey);
             lButton.setBackground(lButtonBg);
             lButton.setOnClickListener(this);
-            m_widgetMap.put(lButton, "item");
+            m_widgetMap.put(lButton, lKey);
             
             addView(lButton);
         }        
@@ -60,6 +60,7 @@ public class GAddressKey extends GWidget implements OnClickListener {
     @Override
     public void onClick(View v) {
         String lWidgetId = m_widgetMap.get(v);
+        GManager.Instance().showMessage(lWidgetId);
     }
     //===============================================
 }
