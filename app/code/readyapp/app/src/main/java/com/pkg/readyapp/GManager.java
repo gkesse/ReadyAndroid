@@ -63,6 +63,13 @@ public class GManager {
         return System.getenv(key);
     }
     //===============================================
+    // page
+    //===============================================
+    public void setPage(String address) {
+        mgr.app.address_key.setContent(address);
+        showMessage(address);
+    }
+    //===============================================
     // string
     //===============================================
     public int getWidth(String widthMap, int index, int defaultWidth) {
@@ -93,6 +100,8 @@ public class GManager {
         public String app_name;
         // context
         Context context;
+        // address
+        GWidget address_key;
         // button
         public String button_bg;
         public String button_border;

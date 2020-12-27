@@ -55,12 +55,14 @@ public class GAddressBar extends GWidget implements OnClickListener,
         addView(lGoTo, new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
     }
     //===============================================
+    // callback
+    //===============================================
     @Override
     public void onClick(View v) {
         String lWidgetId = m_widgetMap.get(v);
         if(lWidgetId.equals("goto")) {
             String lAddress = m_address.getText().toString();
-            GManager.Instance().showMessage(lAddress);
+            GManager.Instance().setPage(lAddress);
         }
     }
     //===============================================
@@ -69,7 +71,7 @@ public class GAddressBar extends GWidget implements OnClickListener,
         if((event.getAction() == KeyEvent.ACTION_DOWN) &&
         (keyCode == KeyEvent.KEYCODE_ENTER)) {
             String lAddress = m_address.getText().toString();
-            GManager.Instance().showMessage(lAddress);
+            GManager.Instance().setPage(lAddress);
             return true;
         }
         return false;

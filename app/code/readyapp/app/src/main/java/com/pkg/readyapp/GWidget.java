@@ -7,6 +7,8 @@ import android.util.*;
 //===============================================
 public class GWidget extends LinearLayout {
     //===============================================
+    // constructor
+    //===============================================
     public GWidget(Context context) {
         super(context);
     }
@@ -20,6 +22,10 @@ public class GWidget extends LinearLayout {
         if(key.equals("stackwidget")) {return new GStackWidget(context);}
         return new GWidget(context); 
     }
+    //===============================================
+    // method
+    //===============================================
+    public void setContent(String text) {}
     //===============================================
 }
 //===============================================
