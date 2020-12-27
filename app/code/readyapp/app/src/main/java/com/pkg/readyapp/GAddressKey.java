@@ -13,7 +13,11 @@ import java.util.*;
 //===============================================
 public class GAddressKey extends GWidget implements OnClickListener {
     //===============================================
+    // property
+    //===============================================
     private HashMap<View, String> m_widgetMap = new HashMap<View, String>();
+    //===============================================
+    // constructor
     //===============================================
     public GAddressKey(Context context) {
         super(context);

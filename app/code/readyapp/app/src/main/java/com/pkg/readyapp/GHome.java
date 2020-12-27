@@ -11,7 +11,7 @@ import android.view.*;
 import android.view.View.*;
 import java.util.*;
 //===============================================
-public class GListBox extends GWidget implements OnClickListener {
+public class GHome extends GWidget implements GWidget.OnItemClcik {
     //===============================================
     // property
     //===============================================
@@ -19,17 +19,21 @@ public class GListBox extends GWidget implements OnClickListener {
     //===============================================
     // constructor
     //===============================================
-    public GListBox(Context context) {
+    public GHome(Context context) {
         super(context);
         setOrientation(LinearLayout.VERTICAL);       
         setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT));
+        
+        GWidget lListBox = GWidget.Create("listbox", this);
+        lListBox.addItem("SQLite", "home/sqlite");
+        lListBox.addItem("OpenCV", "home/opencv");
+        
+        addView(lListBox);
     }
     //===============================================
     // method
     //===============================================
     public void addItem(String text, String key) {
-        GManager.sGApp lApp = GManager.Instance().getData().app;
-
         GradientDrawable lButtonBg = new GradientDrawable();
         lButtonBg.setColor(Color.parseColor(lApp.button_bg));
         lButtonBg.setCornerRadius(lApp.button_border_radius);
@@ -48,7 +52,7 @@ public class GListBox extends GWidget implements OnClickListener {
     // callback
     //===============================================
     @Override
-    public void onClick(View v) {
+    public void onItemClick() {
         String lWidgetId = m_widgetMap.get(v);
         GManager.Instance().showMessage(lWidgetId);
     }
