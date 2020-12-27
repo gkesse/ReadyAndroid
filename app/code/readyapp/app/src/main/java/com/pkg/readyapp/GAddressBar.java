@@ -11,7 +11,8 @@ import android.view.*;
 import android.view.View.*;
 import java.util.*;
 //===============================================
-public class GAddressBar extends GWidget implements OnClickListener {
+public class GAddressBar extends GWidget implements OnClickListener,
+    OnKeyListener {
     //===============================================
     private HashMap<View, String> m_widgetMap = new HashMap<View, String>();
     private EditText m_address;
@@ -34,6 +35,7 @@ public class GAddressBar extends GWidget implements OnClickListener {
         EditText lAddress = new EditText(context);
         m_address = lAddress;
         lAddress.setSingleLine(true);
+        lAddress.setOnKeyListener(this);
         
         GradientDrawable lGoToBg = new GradientDrawable();
         lGoToBg.setColor(Color.parseColor(lApp.button_bg));
@@ -61,6 +63,17 @@ public class GAddressBar extends GWidget implements OnClickListener {
             GManager.Instance().showMessage(lAddress);
         }
     }
+    //===============================================
+     @Override
+    public boolean onKey(View v, int keyCode, KeyEvent event) {
+        if((event.getAction() == KeyEvent.ACTION_DOWN) &&
+        (keyCode == KeyEvent.KEYCODE_ENTER)) {
+            String lAddress = m_address.getText().toString();
+            GManager.Instance().showMessage(lAddress);
+            return true;
+        }
+        return false;
+    }    
     //===============================================
 }
 //===============================================
