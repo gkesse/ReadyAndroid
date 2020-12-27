@@ -29,7 +29,7 @@ public class GWindow extends GWidget {
     //===============================================
     public void addItem(String key, View v) {
         GManager.sGApp lApp = GManager.Instance().getData().app;
-        int lIndex = m_workspace.count();
+        int lIndex = lApp.page_map.count();
         lApp.page_map.addItem(v);
         lApp.page_id.put(key, lIndex);
     }
