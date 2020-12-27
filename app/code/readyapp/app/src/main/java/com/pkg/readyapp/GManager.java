@@ -23,6 +23,7 @@ public class GManager {
         mgr.app.button_border_radius = 10;
         mgr.app.button_border_width = 1;
         mgr.app.font_awesome = "fonts/fontawesome-webfont.woff2";
+        mgr.app.page_id = new HashMap<String, Integer>();
     }
     //===============================================
     public static synchronized GManager Instance() {           
