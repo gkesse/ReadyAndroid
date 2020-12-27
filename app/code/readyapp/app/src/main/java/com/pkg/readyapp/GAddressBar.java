@@ -33,7 +33,7 @@ public class GAddressBar extends GWidget implements OnClickListener,
         m_widgetMap.put(lIcon, "icon");
         
         EditText lAddress = new EditText(context);
-        m_address = lAddress;
+        lApp.address_bar = lAddress;
         lAddress.setSingleLine(true);
         lAddress.setOnKeyListener(this);
         
@@ -61,7 +61,7 @@ public class GAddressBar extends GWidget implements OnClickListener,
     public void onClick(View v) {
         String lWidgetId = m_widgetMap.get(v);
         if(lWidgetId.equals("goto")) {
-            String lAddress = m_address.getText().toString();
+            String lAddress = lApp.address_bar.getText().toString();
             GManager.Instance().setPage(lAddress);
         }
     }

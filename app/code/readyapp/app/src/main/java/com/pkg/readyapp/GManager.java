@@ -72,7 +72,7 @@ public class GManager {
         int lPageId = mgr.app.page_id.get(address);
         mgr.app.address_key.setContent(address);
         mgr.app.page_map.setCurrentIndex(lPageId);
-        showMessage(address);
+        mgr.app.address_bar.setText(address);
     }
     //===============================================
     // string
@@ -106,6 +106,7 @@ public class GManager {
         // context
         public Context context;
         // address
+        public EditText address_bar;
         public GWidget address_key;
         // widget
         public String widget_id;
