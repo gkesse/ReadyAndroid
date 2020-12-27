@@ -27,8 +27,8 @@ public class GMainActivity extends Activity {
         lMainLayout.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
         lMainLayout.setPadding(10, 10, 10, 10);
         lMainLayout.addView(lAddressBar);
-        lMainLayout.addView(lAddressKey);
         lMainLayout.addView(lWindow);
+        lMainLayout.addView(lAddressKey);
         
         setContentView(lMainLayout);
     }

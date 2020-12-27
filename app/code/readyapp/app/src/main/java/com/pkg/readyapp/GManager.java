@@ -68,7 +68,10 @@ public class GManager {
     // page
     //===============================================
     public void setPage(String address) {
+        if(!mgr.app.page_id.containsKey(address)) {return;}
+        int lPageId = mgr.app.page_id.get(address);
         mgr.app.address_key.setContent(address);
+        mgr.app.page_map.setCurrentIndex(lPageId);
         showMessage(address);
     }
     //===============================================

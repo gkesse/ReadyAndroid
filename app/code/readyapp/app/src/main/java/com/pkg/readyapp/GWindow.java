@@ -27,11 +27,16 @@ public class GWindow extends GWidget {
     //===============================================
     // method
     //===============================================
-    public void addItem(String key, View v) {
+    public void addItem(String key, View v, int isDefault) {
         GManager.sGApp lApp = GManager.Instance().getData().app;
         int lIndex = lApp.page_map.count();
         lApp.page_map.addItem(v);
         lApp.page_id.put(key, lIndex);
+        if(isDefault == 1) {GManager.Instance().setPage(key);}
+    }
+    //===============================================
+    public void addItem(String key, View v) {
+        addItem(key, v, 0);
     }
     //===============================================
 }
