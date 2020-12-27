@@ -15,7 +15,8 @@ public class GStackWidget extends GWidget {
     //===============================================
     // property
     //===============================================
-    private HashMap<View, String> m_widgetMap = new HashMap<View, String>();
+    private HashMap<View, Integer> m_widgetMap = new HashMap<View, Integer>();
+    private int m_count = 0;
     //===============================================
     // constructor
     //===============================================
@@ -29,6 +30,9 @@ public class GStackWidget extends GWidget {
     //===============================================
     public void addItem(View v) {
         addView(v);
+        m_widgetMap.put(v, m_count);
+        if(m_count != 0) {v.setVisibility(View.INVISIBLE); }
+        m_count++;
     }
     //===============================================
 }
