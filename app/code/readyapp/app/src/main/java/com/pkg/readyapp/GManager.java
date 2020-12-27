@@ -3,6 +3,7 @@ package com.pkg.readyapp;
 //===============================================
 import android.content.*;
 import android.widget.*;
+import java.util.*;
 //===============================================
 // manager
 //===============================================
@@ -104,6 +105,9 @@ public class GManager {
         GWidget address_key;
         // widget
         String widget_id;
+        // page
+        GWidget page_map;
+        private HashMap<String, Integer> page_id;
         // button
         public String button_bg;
         public String button_border;

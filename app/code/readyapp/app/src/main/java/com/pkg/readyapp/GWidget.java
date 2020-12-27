@@ -27,7 +27,10 @@ public class GWidget extends LinearLayout {
         if(key.equals("addresskey")) {return new GAddressKey(context);}
         if(key.equals("stackwidget")) {return new GStackWidget(context);}
         // page
+        if(key.equals("window")) {return new GWindow(context);}
         if(key.equals("home")) {return new GHome(context);}
+        if(key.equals("sqlite")) {return new GSQLite(context);}
+        if(key.equals("opencv")) {return new GOpenCV(context);}
         // default
         return new GWidget(context); 
     }
@@ -46,9 +49,14 @@ public class GWidget extends LinearLayout {
     //===============================================
     // method
     //===============================================
+    public int count() {return 0;}
+    //
     public void setContent(String text) {}
+    public void setCurrentIndex(int index) {}
+    //
     public void addItem(String text, String key) {}
     public void addItem(View v) {}
+    public void addItem(String key, View v) {}
     //===============================================
     // callback
     //===============================================

@@ -16,9 +16,11 @@ public class GMainActivity extends Activity {
                         
         GWidget lAddressBar = GWidget.Create("addressbar", this);
         GWidget lAddressKey = GWidget.Create("addresskey", this);
-        GWidget lStackWidget = GWidget.Create("stackwidget", this);
-        lStackWidget.addItem(GWidget.Create("home", this));
-        lStackWidget.addItem(GWidget.Create("home", this));
+        GWidget lWindow = GWidget.Create("window", this);
+        
+        lWindow.addItem("home", GWidget.Create("home", this));
+        lWindow.addItem("home/sqlite", GWidget.Create("sqlite", this));
+        lWindow.addItem("home/opencv", GWidget.Create("opencv", this));
         
         LinearLayout lMainLayout = new LinearLayout(this);
         lMainLayout.setOrientation(LinearLayout.VERTICAL);       
@@ -26,7 +28,7 @@ public class GMainActivity extends Activity {
         lMainLayout.setPadding(10, 10, 10, 10);
         lMainLayout.addView(lAddressBar);
         lMainLayout.addView(lAddressKey);
-        lMainLayout.addView(lStackWidget);
+        lMainLayout.addView(lWindow);
         
         setContentView(lMainLayout);
     }
