@@ -24,6 +24,7 @@ public class GManager {
         mgr.app.button_border_width = 1;
         mgr.app.font_awesome = "fonts/fontawesome-webfont.woff2";
         mgr.app.page_id = new HashMap<String, Integer>();
+        mgr.app.address_url = "";
     }
     //===============================================
     public static synchronized GManager Instance() {           
@@ -68,11 +69,15 @@ public class GManager {
     // page
     //===============================================
     public void setPage(String address) {
-        if(!mgr.app.page_id.containsKey(address)) {return;}
+        if(!mgr.app.page_id.containsKey(address)) {
+            mgr.app.address_bar.setText(mgr.app.address_url);
+            return;
+        }
         int lPageId = mgr.app.page_id.get(address);
         mgr.app.address_key.setContent(address);
         mgr.app.page_map.setCurrentIndex(lPageId);
         mgr.app.address_bar.setText(address);
+        mgr.app.address_url = address;
     }
     //===============================================
     // string
@@ -108,6 +113,7 @@ public class GManager {
         // address
         public EditText address_bar;
         public GWidget address_key;
+        public String address_url;
         // widget
         public String widget_id;
         // page

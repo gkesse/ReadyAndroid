@@ -15,7 +15,6 @@ public class GAddressBar extends GWidget implements OnClickListener,
     OnKeyListener {
     //===============================================
     private HashMap<View, String> m_widgetMap = new HashMap<View, String>();
-    private EditText m_address;
     //===============================================
     public GAddressBar(Context context) {
         super(context);
@@ -59,6 +58,7 @@ public class GAddressBar extends GWidget implements OnClickListener,
     //===============================================
     @Override
     public void onClick(View v) {
+        GManager.sGApp lApp = GManager.Instance().getData().app;
         String lWidgetId = m_widgetMap.get(v);
         if(lWidgetId.equals("goto")) {
             String lAddress = lApp.address_bar.getText().toString();
@@ -68,9 +68,10 @@ public class GAddressBar extends GWidget implements OnClickListener,
     //===============================================
      @Override
     public boolean onKey(View v, int keyCode, KeyEvent event) {
+        GManager.sGApp lApp = GManager.Instance().getData().app;
         if((event.getAction() == KeyEvent.ACTION_DOWN) &&
         (keyCode == KeyEvent.KEYCODE_ENTER)) {
-            String lAddress = m_address.getText().toString();
+            String lAddress = lApp.address_bar.getText().toString();
             GManager.Instance().setPage(lAddress);
             return true;
         }
