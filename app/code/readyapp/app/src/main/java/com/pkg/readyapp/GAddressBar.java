@@ -14,6 +14,7 @@ import java.util.*;
 public class GAddressBar extends GWidget implements OnClickListener {
     //===============================================
     private HashMap<View, String> m_widgetMap = new HashMap<View, String>();
+    private EditText m_address;
     //===============================================
     public GAddressBar(Context context) {
         super(context);
@@ -31,6 +32,7 @@ public class GAddressBar extends GWidget implements OnClickListener {
         m_widgetMap.put(lIcon, "icon");
         
         EditText lAddress = new EditText(context);
+        m_address = lAddress;
         lAddress.setSingleLine(true);
         
         GradientDrawable lGoToBg = new GradientDrawable();
@@ -54,7 +56,10 @@ public class GAddressBar extends GWidget implements OnClickListener {
     @Override
     public void onClick(View v) {
         String lWidgetId = m_widgetMap.get(v);
-        GManager.Instance().showMessage(lWidgetId);
+        if(lWidgetId.equals("goto")) {
+            String lAddress = m_address.getText().toString();
+            GManager.Instance().showMessage(lAddress);
+        }
     }
     //===============================================
 }
