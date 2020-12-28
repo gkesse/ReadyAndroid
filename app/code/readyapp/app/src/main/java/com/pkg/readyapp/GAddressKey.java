@@ -69,7 +69,7 @@ public class GAddressKey extends GWidget implements OnClickListener {
     @Override
     public void onClick(View v) {
         String lWidgetId = m_widgetMap.get(v);
-        GManager.Instance().showMessage(lWidgetId);
+        GManager.Instance().setPage(lWidgetId);
     }
     //===============================================
 }
