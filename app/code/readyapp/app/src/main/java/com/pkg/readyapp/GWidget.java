@@ -56,8 +56,8 @@ public class GWidget extends LinearLayout {
     //
     public void addItem(String text, String key) {}
     public void addItem(View v) {}
-    public void addItem(String key, View v) {}
-    public void addItem(String key, View v, int isDefault) {}
+    public void addItem(String key, View v, String title) {}
+    public void addItem(String key, View v, String title, int isDefault) {}
     //===============================================
     // callback
     //===============================================

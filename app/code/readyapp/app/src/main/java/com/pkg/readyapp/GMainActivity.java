@@ -18,17 +18,17 @@ public class GMainActivity extends Activity {
         GWidget lAddressKey = GWidget.Create("addresskey", this);
         GWidget lWindow = GWidget.Create("window", this);
         
-        lWindow.addItem("home", GWidget.Create("home", this));
-        lWindow.addItem("home/sqlite", GWidget.Create("sqlite", this));
-        lWindow.addItem("home/opencv", GWidget.Create("opencv", this), 1);
+        lWindow.addItem("home", GWidget.Create("home", this), "Accueil", 1);
+        lWindow.addItem("home/sqlite", GWidget.Create("sqlite", this), "SQLite");
+        lWindow.addItem("home/opencv", GWidget.Create("opencv", this), "OpenCV");
         
         LinearLayout lMainLayout = new LinearLayout(this);
         lMainLayout.setOrientation(LinearLayout.VERTICAL);       
         lMainLayout.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
         lMainLayout.setPadding(10, 10, 10, 10);
         lMainLayout.addView(lAddressBar);
-        lMainLayout.addView(lWindow);
         lMainLayout.addView(lAddressKey);
+        lMainLayout.addView(lWindow);
         
         setContentView(lMainLayout);
     }

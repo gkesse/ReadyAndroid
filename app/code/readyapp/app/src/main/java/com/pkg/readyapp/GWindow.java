@@ -27,7 +27,7 @@ public class GWindow extends GWidget {
     //===============================================
     // method
     //===============================================
-    public void addItem(String key, View v, int isDefault) {
+    public void addItem(String key, View v, String title, int isDefault) {
         GManager.sGApp lApp = GManager.Instance().getData().app;
         int lIndex = lApp.page_map.count();
         lApp.page_map.addItem(v);
@@ -35,8 +35,8 @@ public class GWindow extends GWidget {
         if(isDefault == 1) {GManager.Instance().setPage(key);}
     }
     //===============================================
-    public void addItem(String key, View v) {
-        addItem(key, v, 0);
+    public void addItem(String key, View v, String title) {
+        addItem(key, v, title, 0);
     }
     //===============================================
 }
