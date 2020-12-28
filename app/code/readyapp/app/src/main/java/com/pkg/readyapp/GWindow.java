@@ -32,6 +32,7 @@ public class GWindow extends GWidget {
         int lIndex = lApp.page_map.count();
         lApp.page_map.addItem(v);
         lApp.page_id.put(key, lIndex);
+        lApp.title_map.put(key, title);
         if(isDefault == 1) {GManager.Instance().setPage(key);}
     }
     //===============================================

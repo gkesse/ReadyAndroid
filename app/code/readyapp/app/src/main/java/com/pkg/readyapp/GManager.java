@@ -24,7 +24,7 @@ public class GManager {
         mgr.app.button_border_width = 1;
         mgr.app.font_awesome = "fonts/fontawesome-webfont.woff2";
         mgr.app.page_id = new HashMap<String, Integer>();
-        mgr.app.page_title = new HashMap<String, String>();
+        mgr.app.title_map = new HashMap<String, String>();
         mgr.app.address_url = "";
     }
     //===============================================
@@ -75,9 +75,11 @@ public class GManager {
             return;
         }
         int lPageId = mgr.app.page_id.get(address);
+        String lTitle = mgr.app.title_map.get(address);
         mgr.app.page_map.setCurrentIndex(lPageId);
         mgr.app.address_key.setContent(address);
         mgr.app.address_bar.setText(address);
+        mgr.app.title.setText(lTitle);
         mgr.app.address_url = address;
     }
     //===============================================
@@ -120,7 +122,9 @@ public class GManager {
         // page
         public GWidget page_map;
         public HashMap<String, Integer> page_id;
-        public HashMap<String, String> page_title;
+        // title
+        public TextView title;
+        public HashMap<String, String> title_map;
         // button
         public String button_bg;
         public String button_border;

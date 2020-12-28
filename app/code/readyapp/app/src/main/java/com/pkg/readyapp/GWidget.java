@@ -26,6 +26,7 @@ public class GWidget extends LinearLayout {
         if(key.equals("addressbar")) {return new GAddressBar(context);}
         if(key.equals("addresskey")) {return new GAddressKey(context);}
         if(key.equals("stackwidget")) {return new GStackWidget(context);}
+        if(key.equals("titlebar")) {return new GTitleBar(context);}
         // page
         if(key.equals("window")) {return new GWindow(context);}
         if(key.equals("home")) {return new GHome(context);}
