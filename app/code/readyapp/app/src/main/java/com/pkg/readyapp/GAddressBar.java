@@ -26,7 +26,7 @@ public class GAddressBar extends GWidget implements OnClickListener,
         lIconBg.setStroke(lApp.button_border_width, Color.parseColor(lApp.button_border));
         
         Button lIcon = new Button(context);
-        lIcon.setText(lApp.icon_map.get("addressbook"));
+        lIcon.setText(lApp.icon_map.get("home"));
         lIcon.setBackground(lIconBg);
         lIcon.setOnClickListener(this);
         lIcon.setTypeface(GManager.Instance().loadFace(lApp.icon_font));
@@ -47,18 +47,25 @@ public class GAddressBar extends GWidget implements OnClickListener,
         lGoToBg.setStroke(lApp.button_border_width, Color.parseColor(lApp.button_border));
 
         Button lGoTo = new Button(context);
-        lGoTo.setText("goto");
+        lGoTo.setText(lApp.icon_map.get("paperplaneo"));
         lGoTo.setBackground(lGoToBg);
         lGoTo.setOnClickListener(this);
-        lGoTo.setTypeface(GManager.Instance().loadFace(lApp.app_font));
+        lGoTo.setTypeface(GManager.Instance().loadFace(lApp.icon_font));
         lGoTo.setTransformationMethod(null);
+        lGoTo.setPadding(lApp.button_padding_lr, lApp.button_padding_tb, lApp.button_padding_lr, lApp.button_padding_tb);
         m_widgetMap.put(lGoTo, "goto");
         
+        GradientDrawable lBgColor = new GradientDrawable();
+        lBgColor.setColor(Color.parseColor(lApp.button_bg));
+        lBgColor.setCornerRadius(lApp.button_border_radius);
+        lBgColor.setStroke(lApp.button_border_width, Color.parseColor(lApp.button_border));
+
         setOrientation(LinearLayout.HORIZONTAL);       
         setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT));
         addView(lIcon, new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
         addView(lAddress, new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 1));
         addView(lGoTo, new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
+        setBackground(lBgColor);
     }
     //===============================================
     // callback
