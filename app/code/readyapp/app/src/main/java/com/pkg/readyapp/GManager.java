@@ -81,10 +81,10 @@ public class GManager {
                 lTypeface = Typeface.createFromAsset(mgr.app.context.getAssets(), font);
             }
             catch(Exception e) {
-                showMessage("eeeeeeeeeeeeeeeeerror");
+                showMessage("error");
                 return null;
             }
-            showMessage("oooooooooooooooooook");
+            showMessage("ok");
             m_fontMap.put(font, lTypeface);
         }
         return lTypeface;
