@@ -9,6 +9,7 @@ import android.graphics.*;
 import android.graphics.drawable.*;
 import android.view.*;
 import android.view.View.*;
+import android.util.*;
 import java.util.*;
 //===============================================
 public class GAddressKey extends GWidget implements OnClickListener {
@@ -39,7 +40,10 @@ public class GAddressKey extends GWidget implements OnClickListener {
         for(int i = 0; i < lMap.length; i++) {
             if(i != 0) {
                 Button lButton = new Button(lApp.context);
-                lButton.setText(">");
+                lButton.setText(lApp.icon_map.get("chevronright"));
+                lButton.setTypeface(GManager.Instance().loadFace(lApp.icon_font));
+                lButton.setTransformationMethod(null);
+                lButton.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 20);
                 addView(lButton);
             }
             
