@@ -25,6 +25,7 @@ public class GManager {
         mgr.app.button_border = "#503030";
         mgr.app.button_border_radius = 10;
         mgr.app.button_border_width = 1;
+        mgr.app.app_font = "fonts/Allan-Regular.ttf";
         mgr.app.font_awesome = "fonts/fontawesome-webfont.woff2";
         mgr.app.page_id = new HashMap<String, Integer>();
         mgr.app.title_map = new HashMap<String, String>();
@@ -81,10 +82,8 @@ public class GManager {
                 lTypeface = Typeface.createFromAsset(mgr.app.context.getAssets(), font);
             }
             catch(Exception e) {
-                showMessage("error");
                 return null;
             }
-            showMessage("ok");
             m_fontMap.put(font, lTypeface);
         }
         return lTypeface;
@@ -134,6 +133,7 @@ public class GManager {
     class sGApp {
         // app
         public String app_name;
+        public String app_font;
         // context
         public Context context;
         // address

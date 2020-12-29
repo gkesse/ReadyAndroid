@@ -32,7 +32,7 @@ public class GMainActivity extends Activity {
         lMainLayout.addView(lAddressBar);
         lMainLayout.addView(lAddressKey);
         lMainLayout.addView(lWindow);
-        
+
         setContentView(lMainLayout);
     }
     //===============================================
