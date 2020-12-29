@@ -26,17 +26,19 @@ public class GAddressBar extends GWidget implements OnClickListener,
         lIconBg.setStroke(lApp.button_border_width, Color.parseColor(lApp.button_border));
         
         Button lIcon = new Button(context);
-        lIcon.setText("icon");
+        lIcon.setText("\uf004");
         lIcon.setBackground(lIconBg);
         lIcon.setOnClickListener(this);
-        lIcon.setTypeface(GManager.Instance().loadFont(lApp.app_font));
+        lIcon.setTypeface(GManager.Instance().loadFont(lApp.font_icon));
+        lIcon.setTransformationMethod(null);
+        lIcon.setPadding(lApp.button_padding_lr, lApp.button_padding_tb, lApp.button_padding_lr, lApp.button_padding_tb);
         m_widgetMap.put(lIcon, "icon");
         
         EditText lAddress = new EditText(context);
         lApp.address_bar = lAddress;
         lAddress.setSingleLine(true);
         lAddress.setOnKeyListener(this);
-        lAddress.setTypeface(GManager.Instance().loadFont(lApp.app_font));
+        lAddress.setTypeface(GManager.Instance().loadFont(lApp.font_app));
         m_widgetMap.put(lAddress, "address");
         
         GradientDrawable lGoToBg = new GradientDrawable();
@@ -48,7 +50,8 @@ public class GAddressBar extends GWidget implements OnClickListener,
         lGoTo.setText("goto");
         lGoTo.setBackground(lGoToBg);
         lGoTo.setOnClickListener(this);
-        lGoTo.setTypeface(GManager.Instance().loadFont(lApp.app_font));
+        lGoTo.setTypeface(GManager.Instance().loadFont(lApp.font_app));
+        lGoTo.setTransformationMethod(null);
         m_widgetMap.put(lGoTo, "goto");
         
         setOrientation(LinearLayout.HORIZONTAL);       

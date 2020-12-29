@@ -25,8 +25,10 @@ public class GManager {
         mgr.app.button_border = "#503030";
         mgr.app.button_border_radius = 10;
         mgr.app.button_border_width = 1;
-        mgr.app.app_font = "fonts/Allan-Regular.ttf";
-        mgr.app.font_awesome = "fonts/fontawesome-webfont.woff2";
+        mgr.app.button_padding_lr = 20;
+        mgr.app.button_padding_tb = 10;
+        mgr.app.font_app = "fonts/Allan-Regular.ttf";
+        mgr.app.font_icon = "fonts/fontawesome-webfont.ttf";
         mgr.app.page_id = new HashMap<String, Integer>();
         mgr.app.title_map = new HashMap<String, String>();
         mgr.app.address_url = "";
@@ -133,7 +135,6 @@ public class GManager {
     class sGApp {
         // app
         public String app_name;
-        public String app_font;
         // context
         public Context context;
         // address
@@ -153,8 +154,11 @@ public class GManager {
         public String button_border;
         public int button_border_radius;
         public int button_border_width;
+        public int button_padding_lr;
+        public int button_padding_tb;
         // font
-        public String font_awesome;
+        public String font_app;
+        public String font_icon;
     }
     //===============================================
 }

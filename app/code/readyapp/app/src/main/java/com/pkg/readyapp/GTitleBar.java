@@ -23,7 +23,7 @@ public class GTitleBar extends GWidget {
         
         TextView lTextView = new TextView(context);
         lApp.title = lTextView;
-        lTextView.setTypeface(GManager.Instance().loadFont(lApp.app_font));
+        lTextView.setTypeface(GManager.Instance().loadFont(lApp.font_app));
         
         addView(lTextView);
     }

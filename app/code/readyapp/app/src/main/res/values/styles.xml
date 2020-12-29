@@ -1,20 +1,21 @@
 <resources>
     <!-- ============================================ -->
+    <!-- common -->
+    <!-- ============================================ -->
+    <!-- AppTheme -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- ============================================ -->
         <item name="colorPrimaryDark">#503030</item>
         <item name="android:background">#301010</item>
         <item name="android:textSize">30dp</item>
         <item name="android:textColor">#ffffff</item>
+        <!-- ============================================ -->
+        <item name="android:buttonStyle">@style/GButton</item>
+        <!-- ============================================ -->
     </style>
-    <!-- ============================================ -->
-    <!-- common -->
     <!-- ============================================ -->
     <!-- GButton -->
     <style name="GButton">
-        <item name="android:paddingTop">5dp</item>
-        <item name="android:paddingBottom">5dp</item>
-        <item name="android:paddingLeft">10dp</item>
-        <item name="android:paddingRight">10dp</item>
     </style>
     <!-- ============================================ -->
 </resources>
