@@ -44,20 +44,16 @@ public class GAddressKey extends GWidget implements OnClickListener {
                 lButton.setTypeface(GManager.Instance().loadFace(lApp.icon_font));
                 lButton.setTransformationMethod(null);
                 lButton.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 20);
+                lButton.setPadding(lApp.button_padding_lr, 0, lApp.button_padding_lr, 0);
                 addView(lButton);
             }
             
             String lKey = lMap[i];
             
-            GradientDrawable lButtonBg = new GradientDrawable();
-            lButtonBg.setColor(Color.parseColor(lApp.button_bg));
-            lButtonBg.setCornerRadius(lApp.button_border_radius);
-            lButtonBg.setStroke(lApp.button_border_width, Color.parseColor(lApp.button_border));
-            
             Button lButton = new Button(lApp.context);
             lButton.setText(lKey);
-            lButton.setBackground(lButtonBg);
             lButton.setOnClickListener(this);
+            lButton.setTypeface(GManager.Instance().loadFace(lApp.app_font));
             
             if(i != 0) lKeyId += "/";
             lKeyId += lKey;

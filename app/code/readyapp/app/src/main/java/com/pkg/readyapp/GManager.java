@@ -26,8 +26,8 @@ public class GManager {
         mgr.app.button_border = "#503030";
         mgr.app.button_border_radius = 10;
         mgr.app.button_border_width = 1;
-        mgr.app.button_padding_lr = 20;
-        mgr.app.button_padding_tb = 10;
+        mgr.app.button_padding_lr = 10;
+        mgr.app.button_padding_tb = 5;
         mgr.app.font_map = new HashMap<String, String>();
         mgr.app.app_font = "allan-regular.ttf";
         mgr.app.icon_font = "fontawesome-webfont.ttf";
