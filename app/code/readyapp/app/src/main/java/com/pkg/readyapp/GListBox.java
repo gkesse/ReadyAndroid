@@ -33,7 +33,7 @@ public class GListBox extends GWidget implements OnClickListener {
         Button lButton = new Button(lApp.context);
         lButton.setText(text);
         lButton.setOnClickListener(this);
-        lButton.setTypeface(GManager.Instance().loadFont(lApp.font_app));
+        lButton.setTypeface(GManager.Instance().loadFace(lApp.app_font));
 
         m_widgetMap.put(lButton, key);
         

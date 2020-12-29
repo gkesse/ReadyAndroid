@@ -13,7 +13,9 @@ public class GMainActivity extends Activity {
         super.onCreate(savedInstanceState);
         GManager.sGApp lApp = GManager.Instance().getData().app;
         lApp.context = this;
-                        
+
+        GManager.Instance().loadData();
+        
         GWidget lTitleBar = GWidget.Create("titlebar", this);
         GWidget lAddressBar = GWidget.Create("addressbar", this);
         GWidget lAddressKey = GWidget.Create("addresskey", this);

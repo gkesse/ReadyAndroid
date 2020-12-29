@@ -2,6 +2,7 @@
 package com.pkg.readyapp;
 //===============================================
 import android.content.*;
+import android.content.res.*;
 import android.widget.*;
 import android.graphics.*;
 import java.util.*;
@@ -14,7 +15,7 @@ public class GManager {
     //===============================================
     private sGManager mgr;
     //===============================================
-    private HashMap<String, Typeface> m_fontMap;
+    private HashMap<String, Typeface> m_faceMap;
     //===============================================
     private GManager() {
         // manager
@@ -27,13 +28,14 @@ public class GManager {
         mgr.app.button_border_width = 1;
         mgr.app.button_padding_lr = 20;
         mgr.app.button_padding_tb = 10;
-        mgr.app.font_app = "fonts/Allan-Regular.ttf";
-        mgr.app.font_icon = "fonts/fontawesome-webfont.ttf";
+        mgr.app.font_map = new HashMap<String, String>();
+        mgr.app.app_font = "allan-regular.ttf";
+        mgr.app.icon_font = "fontawesome-webfont.ttf";
         mgr.app.page_id = new HashMap<String, Integer>();
         mgr.app.title_map = new HashMap<String, String>();
         mgr.app.address_url = "";
         // font
-        m_fontMap = new HashMap<String, Typeface>();
+        m_faceMap = new HashMap<String, Typeface>();
     }
     //===============================================
     public static synchronized GManager Instance() {           
@@ -47,6 +49,11 @@ public class GManager {
     //===============================================
     public sGManager getData() {
         return mgr;
+    }
+    //===============================================
+    public void loadData() {
+        mgr.app.font_map = loadAsset("fonts");
+        mgr.app.icon_map = GPicto.Instance().getData();
     }
     //===============================================
     public void showData(String data) {
@@ -63,6 +70,28 @@ public class GManager {
         System.out.print(String.format("\n"));
     }
     //===============================================
+    // asset
+    //===============================================
+    public HashMap<String, String> loadAsset(String name) {
+        AssetManager lAssetManager = mgr.app.context.getAssets();        
+        String[] lAssetMap;
+        HashMap<String, String> lMap = new HashMap<String, String>();
+        
+        try {
+            lAssetMap = lAssetManager.list(name);
+        }
+        catch(Exception e) {
+            return null;
+        }
+        
+        for(String lAsset : lAssetMap) {
+            String lKey = lAsset.toLowerCase();
+            String lPath = name + "/" + lAsset;
+            lMap.put(lKey, lPath);
+        }
+        return lMap;
+    }
+    //===============================================
     // message
     //===============================================
     public void showMessage(String text) {
@@ -77,16 +106,16 @@ public class GManager {
     //===============================================
     // font
     //===============================================
-    public Typeface loadFont(String font) {
-        Typeface lTypeface = m_fontMap.get(font);
+    public Typeface loadFace(String font) {
+        Typeface lTypeface = m_faceMap.get(font);
         if(lTypeface == null) {
             try {
-                lTypeface = Typeface.createFromAsset(mgr.app.context.getAssets(), font);
+                lTypeface = Typeface.createFromAsset(mgr.app.context.getAssets(), mgr.app.font_map.get(font));
             }
             catch(Exception e) {
                 return null;
             }
-            m_fontMap.put(font, lTypeface);
+            m_faceMap.put(mgr.app.font_map.get(font), lTypeface);
         }
         return lTypeface;
     }
@@ -135,6 +164,7 @@ public class GManager {
     class sGApp {
         // app
         public String app_name;
+        public String app_font;
         // context
         public Context context;
         // address
@@ -157,8 +187,10 @@ public class GManager {
         public int button_padding_lr;
         public int button_padding_tb;
         // font
-        public String font_app;
-        public String font_icon;
+        public HashMap<String, String> font_map;
+        // icon
+        public String icon_font;
+        public HashMap<String, String> icon_map;
     }
     //===============================================
 }
