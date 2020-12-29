@@ -19,7 +19,9 @@ public class GLayout extends GWidget {
         super(context);
         setOrientation(LinearLayout.HORIZONTAL);       
         setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT));
-        addView(R.layout.activity_main);
+        LayoutInflater lLayoutInflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE); 
+        View lMainActivity = lLayoutInflater.inflate(R.layout.activity_main, null);
+        addView(lMainActivity);
     }
     //===============================================
 }
