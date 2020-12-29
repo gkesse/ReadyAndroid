@@ -20,8 +20,11 @@ public class GTitleBar extends GWidget {
         GManager.sGApp lApp = GManager.Instance().getData().app;
         setOrientation(LinearLayout.HORIZONTAL);       
         setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT));
+        
         TextView lTextView = new TextView(context);
         lApp.title = lTextView;
+        lTextView.setTypeface(GManager.Instance().loadFont("font/allan_regular.ttf"));
+        
         addView(lTextView);
     }
     //===============================================

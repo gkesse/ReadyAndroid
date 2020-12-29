@@ -3,6 +3,7 @@ package com.pkg.readyapp;
 //===============================================
 import android.content.*;
 import android.widget.*;
+import android.graphics.*;
 import java.util.*;
 //===============================================
 // manager
@@ -12,6 +13,8 @@ public class GManager {
     private static GManager m_intance = null;
     //===============================================
     private sGManager mgr;
+    //===============================================
+    private HashMap<String, Typeface> m_fontMap;
     //===============================================
     private GManager() {
         // manager
@@ -26,6 +29,8 @@ public class GManager {
         mgr.app.page_id = new HashMap<String, Integer>();
         mgr.app.title_map = new HashMap<String, String>();
         mgr.app.address_url = "";
+        // font
+        m_fontMap = new HashMap<String, Typeface>();
     }
     //===============================================
     public static synchronized GManager Instance() {           
@@ -65,6 +70,24 @@ public class GManager {
     //===============================================
     public String getEnv(String key) {
         return System.getenv(key);
+    }
+    //===============================================
+    // font
+    //===============================================
+    public Typeface loadFont(String font) {
+        Typeface lTypeface = m_fontMap.get(font);
+        if(lTypeface == null) {
+            try {
+                lTypeface = Typeface.createFromAsset(mgr.app.context.getAssets(), font);
+            }
+            catch(Exception e) {
+                showMessage("eeeeeeeeeeeeeeeeerror");
+                return null;
+            }
+            showMessage("oooooooooooooooooook");
+            m_fontMap.put(font, lTypeface);
+        }
+        return lTypeface;
     }
     //===============================================
     // page

@@ -24,3 +24,5 @@ grad_install:
 	cd $(GPROJECT_SRC) && gradlew installDebug
 grad_tasks: 
 	cd $(GPROJECT_SRC) && gradlew tasks
+shell: 
+	adb shell $(argv)
