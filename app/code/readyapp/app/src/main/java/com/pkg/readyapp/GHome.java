@@ -28,6 +28,7 @@ public class GHome extends GWidget {
         lListBox.addOnItemClick(this);
         lListBox.addItem("SQLite", "home/sqlite");
         lListBox.addItem("OpenCV", "home/opencv");
+        lListBox.addItem("Layout", "home/layout");
         
         addView(lListBox);
     }

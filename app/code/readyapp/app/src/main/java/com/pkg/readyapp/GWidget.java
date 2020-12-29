@@ -19,6 +19,10 @@ public class GWidget extends LinearLayout {
         super(context);
     }
     //===============================================
+    public GWidget(Context context, AttributeSet attrs, int defStyleAtt) {
+        super(context, attrs, defStyleAtt);
+    }
+    //===============================================
     public static GWidget Create(String key, Context context) {
         // widget
         if(key.equals("widget")) {return new GWidget(context);}
@@ -32,6 +36,7 @@ public class GWidget extends LinearLayout {
         if(key.equals("home")) {return new GHome(context);}
         if(key.equals("sqlite")) {return new GSQLite(context);}
         if(key.equals("opencv")) {return new GOpenCV(context);}
+        if(key.equals("layout")) {return new GLayout(context);}
         // default
         return new GWidget(context); 
     }

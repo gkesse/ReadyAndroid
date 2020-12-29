@@ -22,6 +22,7 @@ public class GMainActivity extends Activity {
         lWindow.addItem("home", GWidget.Create("home", this), "Accueil", 1);
         lWindow.addItem("home/sqlite", GWidget.Create("sqlite", this), "SQLite");
         lWindow.addItem("home/opencv", GWidget.Create("opencv", this), "OpenCV");
+        lWindow.addItem("home/layout", GWidget.Create("layout", this), "Layout");
         
         LinearLayout lMainLayout = new LinearLayout(this);
         lMainLayout.setOrientation(LinearLayout.VERTICAL);       

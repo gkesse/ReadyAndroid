@@ -4,6 +4,8 @@ nox: nox_install
 
 android_studio:
 	studio64
+android_install:
+	sdkmanager "$(GANDROID_PACKAGE)"
 apk_install:
 	adb install $(GPROJECT_APK)
 nox_start: 

@@ -5,16 +5,37 @@
         <item name="android:background">#301010</item>
         <item name="android:textSize">25sp</item>
         <item name="android:textColor">#ffffff</item>
-        <item name="android:fontFamily">Arial</item>
+        <item name="android:fontFamily">times new</item>
         <!-- ============================================ -->
         <item name="android:buttonStyle">@style/GButton</item>
+        <item name="android:textViewStyle">@style/GTextView</item>
     </style>
     <!-- ============================================ -->
+    <!-- common -->
+    <!-- ============================================ -->
+    <!-- GButton -->
     <style name="GButton">
         <item name="android:paddingTop">5dp</item>
         <item name="android:paddingBottom">5dp</item>
         <item name="android:paddingLeft">10dp</item>
         <item name="android:paddingRight">10dp</item>
+        <item name="android:fontFamily">@font/allan_regular</item>
+    </style>
+    <!-- ============================================ -->
+    <!-- GTextView -->
+     <style name="GTextView">
+        <item name="android:fontFamily">Arial</item>
+    </style>
+    <!-- ============================================ -->
+    <!-- Custom -->
+    <!-- ============================================ -->
+    <!-- GTitleBar -->
+    <style name="GTitleBar" parent="@android:style/Widget.TextView">
+        <item name="android:background">#ff0000</item>
+    </style>
+    <style name="GTitleBar_title" parent="@style/GTitleBar">
+        <item name="android:fontFamily">Times New</item>
+        <item name="android:textSize">45sp</item>
     </style>
     <!-- ============================================ -->
 </resources>
