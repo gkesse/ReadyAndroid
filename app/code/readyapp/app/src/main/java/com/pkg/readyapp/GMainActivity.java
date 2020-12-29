@@ -30,10 +30,10 @@ public class GMainActivity extends Activity {
         lMainLayout.setOrientation(LinearLayout.VERTICAL);       
         lMainLayout.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
         lMainLayout.setPadding(10, 10, 10, 10);
-        lMainLayout.addView(lTitleBar);
-        lMainLayout.addView(lAddressBar);
-        lMainLayout.addView(lAddressKey);
-        lMainLayout.addView(lWindow);
+        lMainLayout.addView(lTitleBar); lMainLayout.addView(GAndroid.Instance().space(10));
+        lMainLayout.addView(lAddressBar); lMainLayout.addView(GAndroid.Instance().space(10));
+        lMainLayout.addView(lAddressKey); lMainLayout.addView(GAndroid.Instance().space(10));
+        lMainLayout.addView(lWindow); lMainLayout.addView(GAndroid.Instance().space(10));
 
         setContentView(lMainLayout);
     }
