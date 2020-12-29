@@ -29,12 +29,15 @@ public class GAddressBar extends GWidget implements OnClickListener,
         lIcon.setText("icon");
         lIcon.setBackground(lIconBg);
         lIcon.setOnClickListener(this);
+        lIcon.setTypeface(GManager.Instance().loadFont(lApp.app_font));
         m_widgetMap.put(lIcon, "icon");
         
         EditText lAddress = new EditText(context);
         lApp.address_bar = lAddress;
         lAddress.setSingleLine(true);
         lAddress.setOnKeyListener(this);
+        lAddress.setTypeface(GManager.Instance().loadFont(lApp.app_font));
+        m_widgetMap.put(lAddress, "address");
         
         GradientDrawable lGoToBg = new GradientDrawable();
         lGoToBg.setColor(Color.parseColor(lApp.button_bg));
@@ -45,6 +48,7 @@ public class GAddressBar extends GWidget implements OnClickListener,
         lGoTo.setText("goto");
         lGoTo.setBackground(lGoToBg);
         lGoTo.setOnClickListener(this);
+        lGoTo.setTypeface(GManager.Instance().loadFont(lApp.app_font));
         m_widgetMap.put(lGoTo, "goto");
         
         setOrientation(LinearLayout.HORIZONTAL);       
