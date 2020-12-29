@@ -48,7 +48,7 @@ public class GManager {
     public sGManager getData() {
         return mgr;
     }
- //===============================================
+    //===============================================
     public void showData(String data) {
         System.out.print(String.format("[%s]\n", data));
     }
