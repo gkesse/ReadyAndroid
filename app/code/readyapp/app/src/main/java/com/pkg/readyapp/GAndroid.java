@@ -30,10 +30,17 @@ public class GAndroid {
     //===============================================
     // space
     //===============================================
-    public View space(int size) {
+    public View spaceV(int size) {
         GManager.sGApp lApp = GManager.Instance().getData().app;
         Space lSpace = new Space(lApp.context);
         lSpace.setMinimumHeight(size);
+        return lSpace;
+    }
+    //===============================================
+    public View spaceH(int size) {
+        GManager.sGApp lApp = GManager.Instance().getData().app;
+        Space lSpace = new Space(lApp.context);
+        lSpace.setMinimumWidth(size);
         return lSpace;
     }
     //===============================================

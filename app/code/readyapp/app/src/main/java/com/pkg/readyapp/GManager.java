@@ -22,6 +22,7 @@ public class GManager {
         mgr = new sGManager();
         // app
         mgr.app = new sGApp();
+        mgr.app.app_name = "ReadyApp";
         mgr.app.button_bg = "#503030";
         mgr.app.button_border = "#503030";
         mgr.app.button_border_radius = 10;

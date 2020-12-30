@@ -20,9 +20,9 @@ public class GWindow extends GWidget {
         GManager.sGApp lApp = GManager.Instance().getData().app;
         setOrientation(LinearLayout.VERTICAL);       
         setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT));
-        GWidget lWorkspace = GWidget.Create("stackwidget", context);
-        lApp.page_map = lWorkspace;
-        addView(lWorkspace);
+        GWidget lWorkspaceH = GWidget.Create("stackwidget", context);
+        lApp.page_map = lWorkspaceH;
+        addView(lWorkspaceH);
     }
     //===============================================
     // method
