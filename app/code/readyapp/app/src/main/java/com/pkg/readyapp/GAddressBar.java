@@ -35,6 +35,7 @@ public class GAddressBar extends GWidget implements OnClickListener,
         lAddress.setSingleLine(true);
         lAddress.setOnKeyListener(this);
         lAddress.setTypeface(GManager.Instance().loadFace(lApp.app_font));
+        lAddress.setTextColor(Color.parseColor("#505050"));
         m_widgetMap.put(lAddress, "address");
         
         Button lGoTo = new Button(context);
@@ -51,7 +52,7 @@ public class GAddressBar extends GWidget implements OnClickListener,
         addView(lIcon, new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
         addView(lAddress, new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 1));
         addView(lGoTo, new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
-        setBackground(GAndroid.Instance().bgColor("#503030", 10, 2, "#505050"));
+        setBackground(GAndroid.Instance().bgColor("#503030", 10));
     }
     //===============================================
     // callback

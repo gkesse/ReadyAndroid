@@ -54,5 +54,13 @@ public class GAndroid {
         return lBgColor;
     }
     //===============================================
+    public GradientDrawable bgColor(String bgColor, int borderRadius) {
+        return bgColor(bgColor, borderRadius, 0, "");
+    }
+    //===============================================
+    public GradientDrawable bgColor(String bgColor) {
+        return bgColor(bgColor, 0, 0, "");
+    }
+    //===============================================
 }
 //===============================================
