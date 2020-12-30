@@ -28,6 +28,7 @@ public class GSQLite extends GWidget {
         lTextView.setText("GSQLite");
         
         addView(lTextView);
+        setBackgroundColor(Color.TRANSPARENT);
     }
     //===============================================
 }

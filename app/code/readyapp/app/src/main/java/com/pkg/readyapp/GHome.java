@@ -31,6 +31,7 @@ public class GHome extends GWidget {
         setOrientation(LinearLayout.VERTICAL);       
         setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT));
         addView(lListBox);
+        setBackgroundColor(Color.TRANSPARENT);
     }
     //===============================================
     // callback
