@@ -23,9 +23,10 @@ public class GAddressKey extends GWidget implements OnClickListener {
     public GAddressKey(Context context) {
         super(context);
         GManager.sGApp lApp = GManager.Instance().getData().app;
+        lApp.address_key = this;
         setOrientation(LinearLayout.HORIZONTAL);       
         setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT));
-        lApp.address_key = this;
+        setPadding(10, 0, 10, 0);
     }
     //===============================================
     // method

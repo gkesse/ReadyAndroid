@@ -10,14 +10,13 @@
         <item name="android:textSize">30dp</item>
         <item name="android:textColor">#ffffff</item>
         <!-- ============================================ -->
-        <item name="android:buttonStyle">@style/GButton</item>
-        <item name="android:editTextStyle">@style/GEditText</item>
+        <item name="android:buttonStyle">@style/GEmpty</item>
+        <item name="android:editTextStyle">@style/GEmpty</item>
         <!-- ============================================ -->
     </style>
     <!-- ============================================ -->
-    <!-- GButton -->
-    <style name="GButton">
-    </style>
+    <!-- GEmpty -->
+    <style name="GEmpty"></style>
     <!-- ============================================ -->
     <!-- GEditText -->
     <style name="GEditText">

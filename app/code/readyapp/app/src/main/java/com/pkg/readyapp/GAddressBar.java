@@ -47,12 +47,13 @@ public class GAddressBar extends GWidget implements OnClickListener,
         lGoTo.setPadding(lApp.button_padding_lr, lApp.button_padding_tb, lApp.button_padding_lr, lApp.button_padding_tb);
         m_widgetMap.put(lGoTo, "goto");
 
+        setOrientation(LinearLayout.HORIZONTAL);       
         setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT));
-        setPadding(5, 5, 5, 5);
         addView(lIcon, new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
         addView(lAddress, new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 1));
         addView(lGoTo, new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
         setBackground(GAndroid.Instance().bgColor("#503030", 10));
+        setPadding(5, 5, 5, 5);
     }
     //===============================================
     // callback
