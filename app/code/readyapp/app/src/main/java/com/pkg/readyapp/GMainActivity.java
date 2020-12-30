@@ -29,7 +29,7 @@ public class GMainActivity extends Activity {
         LinearLayout lMainLayout = new LinearLayout(this);
         lMainLayout.setOrientation(LinearLayout.VERTICAL);       
         lMainLayout.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
-        lMainLayout.setPadding(10, 10, 10, 10);
+        lMainLayout.setPadding(20, 10, 20, 10);
         lMainLayout.addView(lTitleBar); lMainLayout.addView(GAndroid.Instance().spaceV(10));
         lMainLayout.addView(lAddressBar); lMainLayout.addView(GAndroid.Instance().spaceV(10));
         lMainLayout.addView(lAddressKey); lMainLayout.addView(GAndroid.Instance().spaceV(10));

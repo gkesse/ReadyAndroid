@@ -9,6 +9,7 @@ import android.graphics.*;
 import android.graphics.drawable.*;
 import android.view.*;
 import android.view.View.*;
+import android.util.*;
 import java.util.*;
 //===============================================
 public class GTitleBar extends GWidget {
@@ -26,6 +27,7 @@ public class GTitleBar extends GWidget {
         TextView lAppName = new TextView(context);
         lAppName.setText(lApp.app_name);
         lAppName.setTypeface(GManager.Instance().loadFace(lApp.app_font));
+        lAppName.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 40);
         
         TextView lTitle = new TextView(context);
         lApp.title = lTitle;
