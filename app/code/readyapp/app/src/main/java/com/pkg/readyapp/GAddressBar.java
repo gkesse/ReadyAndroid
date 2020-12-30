@@ -35,7 +35,7 @@ public class GAddressBar extends GWidget implements OnClickListener,
         lAddress.setSingleLine(true);
         lAddress.setOnKeyListener(this);
         lAddress.setTypeface(GManager.Instance().loadFace(lApp.app_font));
-        lAddress.setTextColor(Color.parseColor("#505050"));
+        lAddress.setTextColor(Color.parseColor("#808080"));
         m_widgetMap.put(lAddress, "address");
         
         Button lGoTo = new Button(context);
