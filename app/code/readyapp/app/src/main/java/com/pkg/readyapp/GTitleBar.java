@@ -21,13 +21,13 @@ public class GTitleBar extends GWidget {
         GManager.sGApp lApp = GManager.Instance().getData().app;
         
         ImageView lLogo = new ImageView(context);
-        lLogo.setImageBitmap(GManager.Instance().getBitmap("images/logo.png", 30, 30));
+        lLogo.setImageBitmap(GManager.Instance().getBitmap("images/logo.png", 40, 40));
         LinearLayout lLogoLayout = new LinearLayout(context);
         lLogoLayout.setOrientation(LinearLayout.VERTICAL);       
         lLogoLayout.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
         lLogoLayout.addView(lLogo);
         lLogoLayout.setGravity(Gravity.BOTTOM);
-        lLogoLayout.setPadding(0, 0, 0, 10);
+        lLogoLayout.setPadding(0, 0, 0, 5);
         
         TextView lAppName = new TextView(context);
         lAppName.setText(lApp.app_name);
