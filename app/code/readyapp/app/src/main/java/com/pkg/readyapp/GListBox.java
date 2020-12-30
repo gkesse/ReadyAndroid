@@ -23,8 +23,8 @@ public class GListBox extends GWidget implements OnClickListener {
         super(context);
         setOrientation(LinearLayout.VERTICAL);       
         setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT));
-        setBackground(GAndroid.Instance().bgColor("", 10, 1, "#503030"));
-        setPadding(10, 10, 10, 10);
+        setBackground(GAndroid.Instance().bgColor("", 10, 2, "#ffffff"));
+        setPadding(15, 15, 15, 15);
     }
     //===============================================
     // method
