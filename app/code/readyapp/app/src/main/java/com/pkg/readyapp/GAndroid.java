@@ -48,7 +48,7 @@ public class GAndroid {
     //===============================================
     public GradientDrawable bgColor(String bgColor, int borderRadius, int borderWidth, String borderColor) {
         GradientDrawable lBgColor = new GradientDrawable();
-        if(bgColor.equals("")) {lBgColor.setColor(Color.parseColor(bgColor));}
+        if(!bgColor.equals("")) {lBgColor.setColor(Color.parseColor(bgColor));}
         if(borderRadius != 0) {lBgColor.setCornerRadius(borderRadius);}
         if(borderWidth != 0) {lBgColor.setStroke(borderWidth, Color.parseColor(borderColor));}
         return lBgColor;
