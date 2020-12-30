@@ -25,6 +25,7 @@ public class GStackWidget extends GWidget {
         super(context);
         setOrientation(LinearLayout.VERTICAL);       
         setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT));
+        setBackground(GAndroid.Instance().bgColor("", 10, 5, "#ffffff"));
     }
     //===============================================
     // method
