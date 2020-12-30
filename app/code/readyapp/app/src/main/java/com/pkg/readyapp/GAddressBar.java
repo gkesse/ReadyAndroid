@@ -51,7 +51,7 @@ public class GAddressBar extends GWidget implements OnClickListener,
         addView(lIcon, new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
         addView(lAddress, new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 1));
         addView(lGoTo, new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
-        setBackground(GAndroid.Instance().bgColor(lApp.button_bg, 0, 0, ""));
+        setBackground(GAndroid.Instance().bgColor("#503030", 10, 2, "#505050"));
     }
     //===============================================
     // callback
