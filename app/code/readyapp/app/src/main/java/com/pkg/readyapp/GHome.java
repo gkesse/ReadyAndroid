@@ -21,8 +21,6 @@ public class GHome extends GWidget {
     //===============================================
     public GHome(Context context) {
         super(context);
-        setOrientation(LinearLayout.VERTICAL);       
-        setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT));
         
         GWidget lListBox = GWidget.Create("listbox", context);
         lListBox.addOnItemClick(this);
@@ -30,7 +28,10 @@ public class GHome extends GWidget {
         lListBox.addItem("OpenCV", "home/opencv");
         lListBox.addItem("Layout", "home/layout");
         
+        setOrientation(LinearLayout.VERTICAL);       
+        setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT));
         addView(lListBox);
+        setBackground(GAndroid.Instance().bgColor("", 10, 1, "#503030"));
     }
     //===============================================
     // callback

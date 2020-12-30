@@ -27,7 +27,7 @@ public class GTitleBar extends GWidget {
         TextView lAppName = new TextView(context);
         lAppName.setText(lApp.app_name);
         lAppName.setTypeface(GManager.Instance().loadFace(lApp.app_font));
-        lAppName.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 40);
+        lAppName.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 30);
         
         TextView lTitle = new TextView(context);
         lApp.title = lTitle;
