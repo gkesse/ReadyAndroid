@@ -20,9 +20,8 @@ public class GTitleBar extends GWidget {
         super(context);
         GManager.sGApp lApp = GManager.Instance().getData().app;
         
-        TextView lLogo = new TextView(context);
-        lLogo.setText(lApp.icon_map.get("globe"));
-        lLogo.setTypeface(GManager.Instance().loadFace(lApp.icon_font));
+        ImageView lLogo = new ImageView(context);
+        lLogo.setImageBitmap(GManager.Instance().getBitmap("images/logo.png"));
         
         TextView lAppName = new TextView(context);
         lAppName.setText(lApp.app_name);

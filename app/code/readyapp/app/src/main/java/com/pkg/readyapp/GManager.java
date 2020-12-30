@@ -5,6 +5,7 @@ import android.content.*;
 import android.content.res.*;
 import android.widget.*;
 import android.graphics.*;
+import java.io.*;
 import java.util.*;
 //===============================================
 // manager
@@ -105,7 +106,7 @@ public class GManager {
         return System.getenv(key);
     }
     //===============================================
-    // font
+    // typeface
     //===============================================
     public Typeface loadFace(String font) {
         Typeface lTypeface = m_faceMap.get(font);
@@ -119,6 +120,36 @@ public class GManager {
             m_faceMap.put(mgr.app.font_map.get(font), lTypeface);
         }
         return lTypeface;
+    }
+    //===============================================
+    // bitmap
+    //===============================================
+    public Bitmap getBitmap(String name, int newWidth, int newHeight) {
+        AssetManager lAssetManager = mgr.app.context.getAssets();
+        InputStream lInputStream;
+        Bitmap lBitmap;
+        
+        try {
+            lInputStream = lAssetManager.open(name);
+            lBitmap = BitmapFactory.decodeStream(lInputStream);
+            if(newWidth != 0 && newHeight != 0) {
+                lBitmap = Bitmap.createScaledBitmap(lBitmap, newWidth, newHeight, false);
+            }
+        } 
+        catch (Exception e) {
+            return null;
+        } 
+        try {
+            lInputStream.close();
+        } 
+        catch (Exception e) {
+            return null;
+        } 
+        return lBitmap;
+    }
+    //===============================================
+    public Bitmap getBitmap(String name) {
+        return getBitmap(name, 0, 0);
     }
     //===============================================
     // page
