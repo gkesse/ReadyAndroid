@@ -20,14 +20,9 @@ public class GAddressBar extends GWidget implements OnClickListener,
         super(context);
         GManager.sGApp lApp = GManager.Instance().getData().app;
         
-        GradientDrawable lIconBg = new GradientDrawable();
-        lIconBg.setColor(Color.parseColor(lApp.button_bg));
-        lIconBg.setCornerRadius(lApp.button_border_radius);
-        lIconBg.setStroke(lApp.button_border_width, Color.parseColor(lApp.button_border));
-        
         Button lIcon = new Button(context);
         lIcon.setText(lApp.icon_map.get("home"));
-        lIcon.setBackground(lIconBg);
+        lIcon.setBackground(GAndroid.Instance().bgColor(lApp.button_bg, 0, 0, ""));
         lIcon.setOnClickListener(this);
         lIcon.setTypeface(GManager.Instance().loadFace(lApp.icon_font));
         lIcon.setTransformationMethod(null);
@@ -62,6 +57,7 @@ public class GAddressBar extends GWidget implements OnClickListener,
 
         setOrientation(LinearLayout.HORIZONTAL);       
         setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT));
+        setPadding(5, 5, 5, 5);
         addView(lIcon, new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
         addView(lAddress, new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 1));
         addView(lGoTo, new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));

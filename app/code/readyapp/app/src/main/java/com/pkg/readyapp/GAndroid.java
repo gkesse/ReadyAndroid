@@ -44,5 +44,15 @@ public class GAndroid {
         return lSpace;
     }
     //===============================================
+    // bgcolor
+    //===============================================
+    public GradientDrawable bgColor(String bgColor, int borderRadius, int borderWidth, String borderColor) {
+        GradientDrawable lBgColor = new GradientDrawable();
+        lBgColor.setColor(Color.parseColor(bgColor));
+        if(borderRadius != 0) {lBgColor.setCornerRadius(borderRadius);}
+        if(borderWidth != 0) {lBgColor.setStroke(borderWidth, Color.parseColor(borderColor));}
+        return lBgColor;
+    }
+    //===============================================
 }
 //===============================================

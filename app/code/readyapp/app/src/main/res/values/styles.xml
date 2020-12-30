@@ -11,7 +11,7 @@
         <item name="android:textColor">#ffffff</item>
         <!-- ============================================ -->
         <item name="android:buttonStyle">@style/GButton</item>
-        <item name="android:eidtTextStyle">@style/GEditText</item>
+        <item name="android:editTextStyle">@style/GEditText</item>
         <!-- ============================================ -->
     </style>
     <!-- ============================================ -->
