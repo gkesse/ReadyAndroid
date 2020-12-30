@@ -30,8 +30,8 @@ public class GHome extends GWidget {
         
         setOrientation(LinearLayout.VERTICAL);       
         setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT));
+        setBackground(GAndroid.Instance().bgColor("#ff8000", 10));
         addView(lListBox);
-        setBackground(GAndroid.Instance().bgColor("", 10, 1, "#503030"));
     }
     //===============================================
     // callback
