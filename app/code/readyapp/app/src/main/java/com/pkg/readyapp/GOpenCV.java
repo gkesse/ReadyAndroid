@@ -21,12 +21,14 @@ public class GOpenCV extends GWidget {
     //===============================================
     public GOpenCV(Context context) {
         super(context);
-        setOrientation(LinearLayout.VERTICAL);       
-        setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT));
+        GManager.sGApp lApp = GManager.Instance().getData().app;
         
         TextView lTextView = new TextView(context);
         lTextView.setText("GOpenCV");
+        lTextView.setTypeface(GManager.Instance().loadFace(lApp.app_font));
         
+        setOrientation(LinearLayout.VERTICAL);       
+        setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT));
         addView(lTextView);
     }
     //===============================================
