@@ -31,7 +31,7 @@ public class GAddressBar extends GWidget implements OnClickListener,
         
         EditText lAddress = new EditText(context);
         lApp.address_bar = lAddress;
-        lAddress.setBackground(Color.TRANSPARENT);
+        lAddress.setBackgroundColor(Color.TRANSPARENT);
         lAddress.setSingleLine(true);
         lAddress.setOnKeyListener(this);
         lAddress.setTypeface(GManager.Instance().loadFace(lApp.app_font));
