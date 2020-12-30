@@ -11,11 +11,16 @@
         <item name="android:textColor">#ffffff</item>
         <!-- ============================================ -->
         <item name="android:buttonStyle">@style/GButton</item>
+        <item name="android:eidtTextStyle">@style/GEditText</item>
         <!-- ============================================ -->
     </style>
     <!-- ============================================ -->
     <!-- GButton -->
     <style name="GButton">
+    </style>
+    <!-- ============================================ -->
+    <!-- GEditText -->
+    <style name="GEditText">
     </style>
     <!-- ============================================ -->
 </resources>
