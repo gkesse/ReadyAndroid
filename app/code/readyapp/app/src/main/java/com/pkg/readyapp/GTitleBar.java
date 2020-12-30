@@ -21,7 +21,13 @@ public class GTitleBar extends GWidget {
         GManager.sGApp lApp = GManager.Instance().getData().app;
         
         ImageView lLogo = new ImageView(context);
-        lLogo.setImageBitmap(GManager.Instance().getBitmap("images/logo.png"));
+        lLogo.setImageBitmap(GManager.Instance().getBitmap("images/logo.png", 30, 30));
+        LinearLayout lLogoLayout = new LinearLayout(context);
+        lLogoLayout.setOrientation(LinearLayout.VERTICAL);       
+        lLogoLayout.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
+        lLogoLayout.addView(lLogo);
+        lLogoLayout.setGravity(Gravity.BOTTOM);
+        lLogoLayout.setPadding(0, 0, 0, 10);
         
         TextView lAppName = new TextView(context);
         lAppName.setText(lApp.app_name);
@@ -35,7 +41,7 @@ public class GTitleBar extends GWidget {
 
         setOrientation(LinearLayout.HORIZONTAL);       
         setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT));
-        addView(lLogo, new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT)); 
+        addView(lLogoLayout, new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.FILL_PARENT)); 
         addView(GAndroid.Instance().spaceH(5), new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
         addView(lAppName, new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT)); 
         addView(GAndroid.Instance().spaceH(30), new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
