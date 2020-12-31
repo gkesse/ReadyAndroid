@@ -11,7 +11,7 @@ import android.view.*;
 import android.view.View.*;
 import java.util.*;
 //===============================================
-public class GOpenCV extends GWidget {
+public class GSQLiteUi extends GWidget {
     //===============================================
     // property
     //===============================================
@@ -19,12 +19,12 @@ public class GOpenCV extends GWidget {
     //===============================================
     // constructor
     //===============================================
-    public GOpenCV(Context context) {
+    public GSQLiteUi(Context context) {
         super(context);
         GManager.sGApp lApp = GManager.Instance().getData().app;
         
         TextView lTextView = new TextView(context);
-        lTextView.setText("GOpenCV");
+        lTextView.setText("GSQLiteUi");
         lTextView.setTypeface(GManager.Instance().loadFace(lApp.app_font));
         
         setOrientation(LinearLayout.VERTICAL);       

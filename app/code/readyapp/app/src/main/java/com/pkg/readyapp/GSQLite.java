@@ -1,35 +1,44 @@
 //===============================================
 package com.pkg.readyapp;
 //===============================================
-import android.widget.*;
 import android.content.*;
-import android.widget.*;
-import android.widget.LinearLayout.*;
-import android.graphics.*;
-import android.graphics.drawable.*;
-import android.view.*;
-import android.view.View.*;
-import java.util.*;
+import android.database.sqlite.*;
+import android.database.sqlite.SQLiteDatabase.*;
 //===============================================
-public class GSQLite extends GWidget {
+// manager
+//===============================================
+public class GSQLite extends SQLiteOpenHelper {
     //===============================================
-    // property
+    private static GSQLite m_intance = null;
     //===============================================
-    private HashMap<View, String> m_widgetMap = new HashMap<View, String>();
+    private GSQLite(Context context, String name, CursorFactory factory, int version) {
+        super(context, name, factory, version);
+    }
     //===============================================
-    // constructor
+    public static synchronized GSQLite Instance() {           
+        if(m_intance == null) {
+            GManager.sGApp lApp = GManager.Instance().getData().app;
+            m_intance = new GSQLite(lApp.context, lApp.sqlite_db_path, null, lApp.sqlite_db_version);; 
+        }
+        return m_intance;
+    }
     //===============================================
-    public GSQLite(Context context) {
-        super(context);
-        GManager.sGApp lApp = GManager.Instance().getData().app;
+    // callback
+    //===============================================
+    @Override
+    public void onCreate(SQLiteDatabase db) {
         
-        TextView lTextView = new TextView(context);
-        lTextView.setText("GSQLite");
-        lTextView.setTypeface(GManager.Instance().loadFace(lApp.app_font));
+    }
+    //===============================================
+    @Override
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         
-        setOrientation(LinearLayout.VERTICAL);       
-        setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT));
-        addView(lTextView);
+    }
+    //===============================================
+    // method
+    //===============================================
+    public void open() {
+
     }
     //===============================================
 }

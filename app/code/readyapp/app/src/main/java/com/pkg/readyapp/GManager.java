@@ -31,7 +31,9 @@ public class GManager {
         mgr.app.icon_font = "fontawesome-webfont.ttf";
         mgr.app.page_id = new HashMap<String, Integer>();
         mgr.app.title_map = new HashMap<String, String>();
-        mgr.app.address_url = "";
+        mgr.app.address_url = "home";
+        mgr.app.sqlite_db_path = "config.dat";
+        mgr.app.sqlite_db_version = 1;
         // font
         m_faceMap = new HashMap<String, Typeface>();
     }
@@ -251,6 +253,9 @@ public class GManager {
         // icon
         public String icon_font;
         public HashMap<String, String> icon_map;
+        // sqlite
+        String sqlite_db_path;
+        int sqlite_db_version;
     }
     //===============================================
 }
