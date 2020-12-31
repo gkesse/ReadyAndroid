@@ -256,6 +256,8 @@ public class GManager {
         // sqlite
         String sqlite_db_path;
         int sqlite_db_version;
+        // debug
+        TextView debug;
     }
     //===============================================
 }

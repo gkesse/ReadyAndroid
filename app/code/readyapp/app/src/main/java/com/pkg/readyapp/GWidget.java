@@ -36,6 +36,7 @@ public class GWidget extends LinearLayout {
         if(key.equals("home")) {return new GHome(context);}
         if(key.equals("sqlite")) {return new GSQLiteUi(context);}
         if(key.equals("opencv")) {return new GOpenCVUi(context);}
+        if(key.equals("debug")) {return new GDebug(context);}
         if(key.equals("layout")) {return new GLayout(context);}
         // default
         return new GWidget(context); 

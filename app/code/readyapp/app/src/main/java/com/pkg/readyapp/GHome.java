@@ -26,6 +26,7 @@ public class GHome extends GWidget {
         lListBox.addOnItemClick(this);
         lListBox.addItem("SQLite", "home/sqlite", "database");
         lListBox.addItem("OpenCV", "home/opencv", "camera");
+        lListBox.addItem("Debug", "home/debug", "filetexto");
         lListBox.addItem("Layout", "home/layout", "book");
         
         setOrientation(LinearLayout.VERTICAL);       
@@ -38,7 +39,7 @@ public class GHome extends GWidget {
     //===============================================
     public void onItemClick() {
         GManager.sGApp lApp = GManager.Instance().getData().app;
-        GManager.Instance().showMessage(lApp.widget_id);
+        GManager.Instance().setPage(lApp.widget_id);
     }
     //===============================================
 }
