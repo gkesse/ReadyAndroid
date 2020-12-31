@@ -38,7 +38,7 @@ public class GHome extends GWidget {
     //===============================================
     public void onItemClick() {
         GManager.sGApp lApp = GManager.Instance().getData().app;
-        GManager.Instance().setPage(lApp.widget_id);
+        GManager.Instance().showMessage(lApp.widget_id);
     }
     //===============================================
 }
