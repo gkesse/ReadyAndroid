@@ -45,7 +45,7 @@ public class GAddressKey extends GWidget implements OnClickListener {
                 lButton.setTypeface(GManager.Instance().loadFace(lApp.icon_font));
                 lButton.setTransformationMethod(null);
                 lButton.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 20);
-                lButton.setPadding(lApp.button_padding_lr, 0, lApp.button_padding_lr, 0);
+                lButton.setPadding(10, 0, 10, 0);
                 addView(lButton);
             }
             

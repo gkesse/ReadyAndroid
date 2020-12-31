@@ -21,7 +21,7 @@ public class GTitleBar extends GWidget {
         GManager.sGApp lApp = GManager.Instance().getData().app;
         
         ImageView lLogo = new ImageView(context);
-        lLogo.setImageBitmap(GManager.Instance().getBitmap("images/logo.png", 40, 40));
+        lLogo.setImageBitmap(GManager.Instance().getBitmap("logo.png", 40, 40));
         LinearLayout lLogoLayout = new LinearLayout(context);
         lLogoLayout.setOrientation(LinearLayout.VERTICAL);       
         lLogoLayout.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
@@ -42,9 +42,9 @@ public class GTitleBar extends GWidget {
         setOrientation(LinearLayout.HORIZONTAL);       
         setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT));
         addView(lLogoLayout, new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.FILL_PARENT)); 
-        addView(GAndroid.Instance().spaceH(5), new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
+        addView(GManager.Instance().spaceH(5), new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
         addView(lAppName, new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT)); 
-        addView(GAndroid.Instance().spaceH(30), new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
+        addView(GManager.Instance().spaceH(30), new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
         addView(lTitle, new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 1)); 
     }
     //===============================================

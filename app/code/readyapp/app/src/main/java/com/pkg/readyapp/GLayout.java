@@ -17,11 +17,17 @@ public class GLayout extends GWidget {
     //===============================================
     public GLayout(Context context) {
         super(context);
+        GManager.sGApp lApp = GManager.Instance().getData().app;
+
+        LayoutInflater lLayoutInflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE); 
+        View lMainLayout = lLayoutInflater.inflate(R.layout.activity_main, null);
+
+        TextView lTextView = (TextView)lMainLayout.findViewById(R.id.hello_world);
+        lTextView.setTypeface(GManager.Instance().loadFace(lApp.app_font));
+        
         setOrientation(LinearLayout.HORIZONTAL);       
         setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT));
-        LayoutInflater lLayoutInflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE); 
-        View lMainActivity = lLayoutInflater.inflate(R.layout.activity_main, null);
-        addView(lMainActivity);
+        addView(lMainLayout);
     }
     //===============================================
 }

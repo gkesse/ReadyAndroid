@@ -9,6 +9,7 @@ import android.graphics.*;
 import android.graphics.drawable.*;
 import android.view.*;
 import android.view.View.*;
+import android.util.*;
 import java.util.*;
 //===============================================
 public class GListBox extends GWidget implements OnClickListener {
@@ -36,7 +37,8 @@ public class GListBox extends GWidget implements OnClickListener {
         lIcon.setOnClickListener(this);
         lIcon.setTypeface(GManager.Instance().loadFace(lApp.icon_font));
         lIcon.setBackgroundColor(Color.TRANSPARENT);
-        lIcon.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 30);
+        lIcon.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 22);
+        lIcon.setMinimumWidth(45);
         m_widgetMap.put(lIcon, key);
         
         Button lButton = new Button(lApp.context);
@@ -51,7 +53,7 @@ public class GListBox extends GWidget implements OnClickListener {
         lItemLayout.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT));
         lItemLayout.setBackgroundColor(Color.TRANSPARENT);
         lItemLayout.addView(lIcon, new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
-        lItemLayout.addView(GAndroid.Instance().spaceH(10), new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
+        lItemLayout.addView(GManager.Instance().spaceH(2), new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
         lItemLayout.addView(lButton, new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 1));
         
         addView(lItemLayout);

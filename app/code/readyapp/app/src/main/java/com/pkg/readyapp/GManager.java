@@ -5,6 +5,8 @@ import android.content.*;
 import android.content.res.*;
 import android.widget.*;
 import android.graphics.*;
+import android.graphics.drawable.*;
+import android.view.*;
 import java.io.*;
 import java.util.*;
 //===============================================
@@ -24,12 +26,6 @@ public class GManager {
         // app
         mgr.app = new sGApp();
         mgr.app.app_name = "ReadyApp";
-        mgr.app.button_bg = "#503030";
-        mgr.app.button_border = "#503030";
-        mgr.app.button_border_radius = 10;
-        mgr.app.button_border_width = 1;
-        mgr.app.button_padding_lr = 10;
-        mgr.app.button_padding_tb = 5;
         mgr.app.font_map = new HashMap<String, String>();
         mgr.app.app_font = "allan-regular.ttf";
         mgr.app.icon_font = "fontawesome-webfont.ttf";
@@ -124,13 +120,14 @@ public class GManager {
     //===============================================
     // bitmap
     //===============================================
-    public Bitmap getBitmap(String name, int newWidth, int newHeight) {
+    public Bitmap getBitmap(String path, String name, int newWidth, int newHeight) {
         AssetManager lAssetManager = mgr.app.context.getAssets();
         InputStream lInputStream;
         Bitmap lBitmap;
+        String lFilename = path + "/" + name;
         
         try {
-            lInputStream = lAssetManager.open(name);
+            lInputStream = lAssetManager.open(lFilename);
             lBitmap = BitmapFactory.decodeStream(lInputStream);
             if(newWidth != 0 && newHeight != 0) {
                 lBitmap = Bitmap.createScaledBitmap(lBitmap, newWidth, newHeight, false);
@@ -148,8 +145,46 @@ public class GManager {
         return lBitmap;
     }
     //===============================================
+    public Bitmap getBitmap(String name, int newWidth, int newHeight) {
+        return getBitmap("images", name, newWidth, newHeight);
+    }
+    //===============================================
     public Bitmap getBitmap(String name) {
-        return getBitmap(name, 0, 0);
+        return getBitmap("images", name, 0, 0);
+    }
+    //===============================================
+    // space
+    //===============================================
+    public View spaceV(int size) {
+        GManager.sGApp lApp = GManager.Instance().getData().app;
+        Space lSpace = new Space(lApp.context);
+        lSpace.setMinimumHeight(size);
+        return lSpace;
+    }
+    //===============================================
+    public View spaceH(int size) {
+        GManager.sGApp lApp = GManager.Instance().getData().app;
+        Space lSpace = new Space(lApp.context);
+        lSpace.setMinimumWidth(size);
+        return lSpace;
+    }
+    //===============================================
+    // bgcolor
+    //===============================================
+    public GradientDrawable bgColor(String bgColor, int borderRadius, int borderWidth, String borderColor) {
+        GradientDrawable lBgColor = new GradientDrawable();
+        if(!bgColor.equals("")) {lBgColor.setColor(Color.parseColor(bgColor));}
+        if(borderRadius != 0) {lBgColor.setCornerRadius(borderRadius);}
+        if(borderWidth != 0) {lBgColor.setStroke(borderWidth, Color.parseColor(borderColor));}
+        return lBgColor;
+    }
+    //===============================================
+    public GradientDrawable bgColor(String bgColor, int borderRadius) {
+        return bgColor(bgColor, borderRadius, 0, "");
+    }
+    //===============================================
+    public GradientDrawable bgColor(String bgColor) {
+        return bgColor(bgColor, 0, 0, "");
     }
     //===============================================
     // page
@@ -211,13 +246,6 @@ public class GManager {
         // title
         public TextView title;
         public HashMap<String, String> title_map;
-        // button
-        public String button_bg;
-        public String button_border;
-        public int button_border_radius;
-        public int button_border_width;
-        public int button_padding_lr;
-        public int button_padding_tb;
         // font
         public HashMap<String, String> font_map;
         // icon
