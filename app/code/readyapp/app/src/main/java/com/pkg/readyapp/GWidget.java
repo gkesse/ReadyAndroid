@@ -31,13 +31,14 @@ public class GWidget extends LinearLayout {
         if(key.equals("addresskey")) {return new GAddressKey(context);}
         if(key.equals("stackwidget")) {return new GStackWidget(context);}
         if(key.equals("titlebar")) {return new GTitleBar(context);}
+        if(key.equals("lineedit")) {return new GLineEdit(context);}
         // page
         if(key.equals("window")) {return new GWindow(context);}
         if(key.equals("home")) {return new GHome(context);}
+        if(key.equals("login")) {return new GLogin(context);}
         if(key.equals("sqlite")) {return new GSQLiteUi(context);}
         if(key.equals("opencv")) {return new GOpenCVUi(context);}
         if(key.equals("debug")) {return new GDebug(context);}
-        if(key.equals("layout")) {return new GLayout(context);}
         // default
         return new GWidget(context); 
     }

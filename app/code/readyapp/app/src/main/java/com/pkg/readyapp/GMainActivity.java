@@ -22,10 +22,10 @@ public class GMainActivity extends Activity {
         GWidget lWindow = GWidget.Create("window", this);
         
         lWindow.addItem("home", GWidget.Create("home", this), "Accueil", 1);
+        lWindow.addItem("home/login", GWidget.Create("login", this), "Connexion", 1);
         lWindow.addItem("home/sqlite", GWidget.Create("sqlite", this), "SQLite");
         lWindow.addItem("home/opencv", GWidget.Create("opencv", this), "OpenCV");
-        lWindow.addItem("home/debug", GWidget.Create("debug", this), "Debug", 1);
-        lWindow.addItem("home/layout", GWidget.Create("layout", this), "Layout");
+        lWindow.addItem("home/debug", GWidget.Create("debug", this), "Debug");
         
         GSQLite.Instance();
 

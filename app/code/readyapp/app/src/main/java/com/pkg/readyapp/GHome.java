@@ -24,10 +24,10 @@ public class GHome extends GWidget {
         
         GWidget lListBox = GWidget.Create("listbox", context);
         lListBox.addOnItemClick(this);
+        lListBox.addItem("Connexion", "home/login", "user");
         lListBox.addItem("SQLite", "home/sqlite", "database");
         lListBox.addItem("OpenCV", "home/opencv", "camera");
         lListBox.addItem("Debug", "home/debug", "filetexto");
-        lListBox.addItem("Layout", "home/layout", "book");
         
         setOrientation(LinearLayout.VERTICAL);       
         setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT));
