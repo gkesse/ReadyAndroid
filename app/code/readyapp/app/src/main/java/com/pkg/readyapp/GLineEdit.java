@@ -31,7 +31,7 @@ public class GLineEdit extends GWidget {
         TextView lLabel = new TextView(lApp.context);
         lLabel.setText(label);
         lLabel.setTypeface(GManager.Instance().loadFace(lApp.app_font));
-        lLabel.setBackground(GManager.Instance().bgColor("#503030", 10));
+        lLabel.setBackground(GManager.Instance().bgColor("#503030", 10, 0, 0, 10));
         lLabel.setPadding(20, 5, 20, 5);
         lLabel.setMinimumWidth(50);
 

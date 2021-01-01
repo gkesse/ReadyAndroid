@@ -211,6 +211,10 @@ public class GManager {
         return lBgColor;
     }
     //===============================================
+    public GradientDrawable bgColor(String bgColor, int borderRadiusTL, int borderRadiusTR, int borderRadiusRB, int borderRadiusBL) {
+        return bgColor(bgColor, borderRadiusTL, borderRadiusTR, borderRadiusRB, borderRadiusBL, 0, bgColor);
+    }
+    //===============================================
     public GradientDrawable bgColor(String bgColor, int borderRadius, int borderWidth, String borderColor) {
         return bgColor(bgColor, borderRadius, borderRadius, borderRadius, borderRadius, borderWidth, borderColor);
     }
