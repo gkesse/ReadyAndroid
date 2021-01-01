@@ -5,6 +5,7 @@ import android.content.*;
 import android.database.*;
 import android.database.sqlite.*;
 import android.database.sqlite.SQLiteDatabase.*;
+import java.util.*;
 //===============================================
 // manager
 //===============================================
@@ -28,7 +29,7 @@ public class GSQLite extends SQLiteOpenHelper {
         "select type, name, tbl_name, rootpage from sqlite_master\n"+
         "where type='table'\n"+
         "");
-        GManager.Instance().showData(queryValue(lQuery));
+        GManager.Instance().showMap(queryMap(lQuery));
     }
     //===============================================
     public static synchronized GSQLite Instance() {           
@@ -150,6 +151,79 @@ public class GSQLite extends SQLiteOpenHelper {
 
         lDb.close();
         return lData;
+    }
+    //===============================================
+    public List<String> queryCol(String sql) {
+        GManager.sGApp lApp = GManager.Instance().getData().app;
+        SQLiteDatabase lDb = getWritableDatabase();
+        Cursor lCursor = lDb.rawQuery(sql, null);
+        String[] lColumnNames = lCursor.getColumnNames();
+        int lColumnCount = lColumnNames.length;
+        List<String> lDataMap = new ArrayList<String>();
+        
+        if(lCursor.moveToFirst()) {
+            for(int i = 0; i < lCursor.getCount(); i++) {
+                for(int j = 0; j < lColumnCount; j++) {
+                    String lData = lCursor.getString(j);
+                    lDataMap.add(lData);
+                    break;
+                }
+                lCursor.moveToNext();
+            }
+            lCursor.close();
+        }
+
+        lDb.close();
+        return lDataMap;
+    }
+    //===============================================
+    public List<String> queryRow(String sql) {
+        GManager.sGApp lApp = GManager.Instance().getData().app;
+        SQLiteDatabase lDb = getWritableDatabase();
+        Cursor lCursor = lDb.rawQuery(sql, null);
+        String[] lColumnNames = lCursor.getColumnNames();
+        int lColumnCount = lColumnNames.length;
+        List<String> lDataMap = new ArrayList<String>();
+        
+        if(lCursor.moveToFirst()) {
+            for(int i = 0; i < lCursor.getCount(); i++) {
+                for(int j = 0; j < lColumnCount; j++) {
+                    String lData = lCursor.getString(j);
+                    lDataMap.add(lData);
+                }
+                lCursor.moveToNext();
+                break;
+            }
+            lCursor.close();
+        }
+
+        lDb.close();
+        return lDataMap;
+    }
+    //===============================================
+    public List<List<String>> queryMap(String sql) {
+        GManager.sGApp lApp = GManager.Instance().getData().app;
+        SQLiteDatabase lDb = getWritableDatabase();
+        Cursor lCursor = lDb.rawQuery(sql, null);
+        String[] lColumnNames = lCursor.getColumnNames();
+        int lColumnCount = lColumnNames.length;
+        List<List<String>> lDataMap = new ArrayList<List<String>>();
+        
+        if(lCursor.moveToFirst()) {
+            for(int i = 0; i < lCursor.getCount(); i++) {
+                List<String> lDataRow = new ArrayList<String>();
+                for(int j = 0; j < lColumnCount; j++) {
+                    String lData = lCursor.getString(j);
+                    lDataRow.add(lData);
+                }
+                lDataMap.add(lDataRow);
+                lCursor.moveToNext();
+            }
+            lCursor.close();
+        }
+
+        lDb.close();
+        return lDataMap;
     }
     //===============================================
 }

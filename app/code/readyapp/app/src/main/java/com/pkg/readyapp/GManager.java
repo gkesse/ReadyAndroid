@@ -62,13 +62,39 @@ public class GManager {
     }
     //===============================================
     public void showData(String[] data) {
-        System.out.print(String.format("["));
+        mgr.app.debug.append(String.format("["));
         for(int i = 0; i < data.length; i++) {
-            if(i != 0) System.out.print(String.format(" ; "));
+            if(i != 0) mgr.app.debug.append(String.format(" ; "));
             String lData = data[i];
-            System.out.print(String.format("%s", lData));
+            mgr.app.debug.append(String.format("%s", lData));
         }
-        System.out.print(String.format("\n"));
+        mgr.app.debug.append(String.format("]"));
+        mgr.app.debug.append(String.format("\n"));
+    }
+    //===============================================
+    public void showData(List<String> data) {
+        mgr.app.debug.append(String.format("["));
+        for(int i = 0; i < data.size(); i++) {
+            if(i != 0) mgr.app.debug.append(String.format(" ; "));
+            String lData = data.get(i);
+            mgr.app.debug.append(String.format("%s", lData));
+        }
+        mgr.app.debug.append(String.format("]"));
+        mgr.app.debug.append(String.format("\n"));
+    }
+    //===============================================
+    public void showMap(List<List<String>> data) {
+        for(int i = 0; i < data.size(); i++) {
+            mgr.app.debug.append(String.format("["));
+            List<String> lDataRow = data.get(i);
+            for(int j = 0; j < lDataRow.size(); j++) {
+                if(j != 0) mgr.app.debug.append(String.format(" ; "));
+                String lData = lDataRow.get(j);
+                mgr.app.debug.append(String.format("%s", lData));
+            }
+            mgr.app.debug.append(String.format("]"));
+            mgr.app.debug.append(String.format("\n"));
+        }
     }
     //===============================================
     // asset
