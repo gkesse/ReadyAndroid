@@ -202,12 +202,16 @@ public class GManager {
     //===============================================
     public GradientDrawable bgColor(String bgColor, int borderRadiusTL, int borderRadiusTR, int borderRadiusRB, int borderRadiusBL, int borderWidth, String borderColor) {
         GradientDrawable lBgColor = new GradientDrawable();
-        if(!bgColor.equals("")) {lBgColor.setColor(Color.parseColor(bgColor));}
+        if(!bgColor.equals("")) {
+            lBgColor.setColor(Color.parseColor(bgColor));
+        }
         if(!borderColor.equals("")) {
             lBgColor.setShape(GradientDrawable.RECTANGLE);
             lBgColor.setCornerRadii(new float[]{borderRadiusTL, borderRadiusTL, borderRadiusTR, borderRadiusTR, borderRadiusRB, borderRadiusRB, borderRadiusBL, borderRadiusBL});            
         }
-        if(borderWidth != 0) {lBgColor.setStroke(borderWidth, Color.parseColor(borderColor));}
+        if(borderWidth != 0) {
+            lBgColor.setStroke(borderWidth, Color.parseColor(borderColor));
+        }
         return lBgColor;
     }
     //===============================================

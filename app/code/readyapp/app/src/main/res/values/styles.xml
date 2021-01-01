@@ -9,17 +9,13 @@
         <item name="android:background">#301010</item>
         <item name="android:textSize">30dp</item>
         <item name="android:textColor">#ffffff</item>
+        <item name="android:textAllCaps">false</item>
         <!-- ============================================ -->
         <item name="android:buttonStyle">@style/GEmpty</item>
-        <item name="android:editTextStyle">@style/GEmpty</item>
         <!-- ============================================ -->
     </style>
     <!-- ============================================ -->
     <!-- GEmpty -->
     <style name="GEmpty"></style>
-    <!-- ============================================ -->
-    <!-- GEditText -->
-    <style name="GEditText">
-    </style>
     <!-- ============================================ -->
 </resources>
