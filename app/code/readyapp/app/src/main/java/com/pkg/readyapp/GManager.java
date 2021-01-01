@@ -34,6 +34,7 @@ public class GManager {
         mgr.app.address_url = "home";
         mgr.app.sqlite_db_path = "config.dat";
         mgr.app.sqlite_db_version = 1;
+        mgr.app.debug_font = "courierprime-regular.ttf";
         // font
         m_faceMap = new HashMap<String, Typeface>();
     }
@@ -258,6 +259,7 @@ public class GManager {
         int sqlite_db_version;
         // debug
         TextView debug;
+        String debug_font;
     }
     //===============================================
 }

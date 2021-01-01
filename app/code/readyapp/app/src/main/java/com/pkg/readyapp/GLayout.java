@@ -20,14 +20,14 @@ public class GLayout extends GWidget {
         GManager.sGApp lApp = GManager.Instance().getData().app;
 
         LayoutInflater lLayoutInflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE); 
-        View lMainLayout = lLayoutInflater.inflate(R.layout.activity_main, null);
+        View lView = lLayoutInflater.inflate(R.layout.activity_main, null);
 
-        TextView lTextView = (TextView)lMainLayout.findViewById(R.id.hello_world);
+        TextView lTextView = (TextView)lView.findViewById(R.id.hello_world);
         lTextView.setTypeface(GManager.Instance().loadFace(lApp.app_font));
         
-        setOrientation(LinearLayout.HORIZONTAL);       
+        setOrientation(LinearLayout.VERTICAL);       
         setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT));
-        addView(lMainLayout);
+        addView(lView);
     }
     //===============================================
 }

@@ -25,10 +25,10 @@ public class GSQLite extends SQLiteOpenHelper {
         queryWrite(lQuery);
         // config_data
         lQuery = String.format(""+
-        "select * from sqlite_master\n"+
+        "select type, name, tbl_name, rootpage from sqlite_master\n"+
         "where type='table'\n"+
         "");
-        queryShow(lQuery, "20", 20);
+        queryShow(lQuery, "10;20;20", 10);
     }
     //===============================================
     public static synchronized GSQLite Instance() {           
@@ -59,26 +59,65 @@ public class GSQLite extends SQLiteOpenHelper {
         Cursor lCursor = lDb.rawQuery(sql, null);
         String[] lColumnNames = lCursor.getColumnNames();
         int lColumnCount = lColumnNames.length;
+        // sep
+        lApp.debug.append(String.format("+-"));
+        for(int i = 0; i < lColumnCount; i++) {
+            if(i != 0) {lApp.debug.append(String.format("-+-"));}
+            int lWidth = GManager.Instance().getWidth(widthMap, i, defaultWidth);
+            for(int j = 0; j < lWidth; j++) {
+                lApp.debug.append(String.format("-"));
+            }
+        }
+        lApp.debug.append(String.format("-+"));
+        lApp.debug.append(String.format("\n"));
         // header
+        lApp.debug.append(String.format("| "));
         for(int i = 0; i < lColumnCount; i++) {
             if(i != 0) {lApp.debug.append(String.format(" | "));}
             String lColumnName = lColumnNames[i];
-            lApp.debug.append(String.format("%s", lColumnName));
+            int lWidth = GManager.Instance().getWidth(widthMap, i, defaultWidth);
+            lApp.debug.append(String.format("%" + (-lWidth) + "s", lColumnName));
         }
+        lApp.debug.append(String.format(" |"));
+        lApp.debug.append(String.format("\n"));
+        // sep
+        lApp.debug.append(String.format("+-"));
+        for(int i = 0; i < lColumnCount; i++) {
+            if(i != 0) {lApp.debug.append(String.format("-+-"));}
+            int lWidth = GManager.Instance().getWidth(widthMap, i, defaultWidth);
+            for(int j = 0; j < lWidth; j++) {
+                lApp.debug.append(String.format("-"));
+            }
+        }
+        lApp.debug.append(String.format("-+"));
         lApp.debug.append(String.format("\n"));
         // data
         if(lCursor.moveToFirst()) {
             for(int i = 0; i < lCursor.getCount(); i++) {
+                lApp.debug.append(String.format("| "));
                 for(int j = 0; j < lColumnCount; j++) {
                     if(j != 0) {lApp.debug.append(String.format(" | "));}
                     String lData = lCursor.getString(j);
-                    lApp.debug.append(String.format("%s", lData));
+                    int lWidth = GManager.Instance().getWidth(widthMap, j, defaultWidth);
+                    lApp.debug.append(String.format("%" + (-lWidth) + "s", lData));
                 }
+                lApp.debug.append(String.format(" |"));
                 lApp.debug.append(String.format("\n"));
                 lCursor.moveToNext();
             }
             lCursor.close();
         }
+        // sep
+        lApp.debug.append(String.format("+-"));
+        for(int i = 0; i < lColumnCount; i++) {
+            if(i != 0) {lApp.debug.append(String.format("-+-"));}
+            int lWidth = GManager.Instance().getWidth(widthMap, i, defaultWidth);
+            for(int j = 0; j < lWidth; j++) {
+                lApp.debug.append(String.format("-"));
+            }
+        }
+        lApp.debug.append(String.format("-+"));
+        lApp.debug.append(String.format("\n"));
         //
         lDb.close();
     }
