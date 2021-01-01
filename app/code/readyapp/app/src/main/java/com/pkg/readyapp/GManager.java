@@ -58,7 +58,7 @@ public class GManager {
     }
     //===============================================
     public void showData(String data) {
-        System.out.print(String.format("[%s]\n", data));
+        mgr.app.debug.append(String.format("[%s]\n", data));
     }
     //===============================================
     public void showData(String[] data) {

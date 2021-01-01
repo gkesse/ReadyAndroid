@@ -28,7 +28,7 @@ public class GSQLite extends SQLiteOpenHelper {
         "select type, name, tbl_name, rootpage from sqlite_master\n"+
         "where type='table'\n"+
         "");
-        queryShow(lQuery, "10;20;20", 10);
+        GManager.Instance().showData(queryValue(lQuery));
     }
     //===============================================
     public static synchronized GSQLite Instance() {           
@@ -126,6 +126,30 @@ public class GSQLite extends SQLiteOpenHelper {
         SQLiteDatabase lDb = getWritableDatabase();
         lDb.execSQL(sql);
         lDb.close();
+    }
+    //===============================================
+    public String queryValue(String sql) {
+        GManager.sGApp lApp = GManager.Instance().getData().app;
+        SQLiteDatabase lDb = getWritableDatabase();
+        Cursor lCursor = lDb.rawQuery(sql, null);
+        String[] lColumnNames = lCursor.getColumnNames();
+        int lColumnCount = lColumnNames.length;
+        String lData = "";
+        
+        if(lCursor.moveToFirst()) {
+            for(int i = 0; i < lCursor.getCount(); i++) {
+                for(int j = 0; j < lColumnCount; j++) {
+                    lData = lCursor.getString(j);
+                    break;
+                }
+                lCursor.moveToNext();
+                break;
+            }
+            lCursor.close();
+        }
+
+        lDb.close();
+        return lData;
     }
     //===============================================
 }
