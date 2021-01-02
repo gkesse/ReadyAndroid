@@ -11,6 +11,7 @@ import android.view.*;
 import android.view.View.*;
 import android.text.method.*; 
 import android.util.*;
+import android.text.*;
 import java.util.*;
 //===============================================
 public class GLineEdit extends GWidget {
@@ -60,6 +61,7 @@ public class GLineEdit extends GWidget {
         lEdit.setTypeface(GManager.Instance().loadFace(lApp.app_font));
         lEdit.setTextColor(Color.parseColor("#808080"));
         lEdit.setPadding(20, 0, 20, 0);
+        lEdit.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
         m_widgetMap.put(lEdit, "edit");
 
         addView(lLabelLayout, new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));        
