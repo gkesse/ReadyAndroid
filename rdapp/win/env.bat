@@ -12,7 +12,7 @@ set "JAVA_HOME=C:\Program Files\Java\jdk-15.0.1"
 ::===============================================
 set "GPROJECT_ROOT=C:\Users\Admin\Downloads\Programs"
 set "GPROJECT_PATH=%GPROJECT_ROOT%\ReadyAndroid"
-set "GPROJECT_SRC=%GPROJECT_PATH%\app\code\readyapp"
+set "GPROJECT_SRC=%GPROJECT_PATH%\rdapp\code\readyapp\src"
 set "GPROJECT_APK=%GPROJECT_SRC%\app\build\outputs\apk\debug\app-debug.apk"
 ::===============================================
 set "GGIT_URL=https://github.com/gkesse/ReadyAndroid.git"
